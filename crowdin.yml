@@ -1,0 +1,3 @@
+files:
+  - source: /EIPS
+    translation: /EIPS-%locale%/%original_file_name%
