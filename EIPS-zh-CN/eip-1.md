@@ -25,11 +25,11 @@ EIP 有 3 种类型：
   - **核心 Core**: 需要共识分叉的改进(如 [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), 以及那些或许非共识关键但可能与 [“核心开发”讨论相关的变化](https://github.com/ethereum/pm)（如 [EIP-90]，矿工/节点策略更改[EIP-86](./eip-86.md)的2、3和4)。
   - **网络 Networking**: 包括对[devp2p][] ([EIP-8](./eip-8.md)) 和[以太坊轻客户端子协议][]的改进，以及对[whisper][]和[swarm][]网络协议规范的改进。
   - **接口 Interface **: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo](https://github. com/ethereum/interfaces) 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该存储库中。
-  - **ERC**: application-level standards and conventions, including contract standards such as token standards ([EIP-20](./eip-20.md)), name registries ([EIP-137](./eip-137.md)), URI schemes, library/package formats, and wallet formats.
+  - **应用标准 ERC**：应用级标准和约定，包括合约标准，如代币标准 ([ERC-20](./eip-20.md))、名字注册 ([ERC-137](./eip-137.md))、URI 方案、库/包格式和钱包格式。
 
-- A **Meta EIP** describes a process surrounding Ethereum or proposes a change to (or an event in) a process. Process EIPs are like Standards Track EIPs but apply to areas other than the Ethereum protocol itself. They may propose an implementation, but not to Ethereum's codebase; they often require community consensus; unlike Informational EIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Ethereum development. Any meta-EIP is also considered a Process EIP.
+- **元 Meta EIP** 描述围绕以太坊的流程或提议对流程（或事件）进行更改。 流程 EIP 类似于标准跟踪 EIP，但流程 EIP 适用于以太坊协议之外的领域。 他们可能会提出一个实施方案，但不会针对以太坊代码库；他们通常需要社区达成共识；与信息 EIP 不同，它们不仅仅是建议，用户一般不能随意忽略它们。 这方面的提案包括程序、指南、决策过程的更改以及以太坊开发中使用的工具或环境的更改。 任何元 EIP 也会被视为流程 EIP。
 
-- An **Informational EIP** describes an Ethereum design issue, or provides general guidelines or information to the Ethereum community, but does not propose a new feature. Informational EIPs do not necessarily represent Ethereum community consensus or a recommendation, so users and implementers are free to ignore Informational EIPs or follow their advice.
+- **信息提案（ Informational EIP）** 描述了以太坊设计问题，或向以太坊社区提供一般指南或信息，但不提出新功能。 信息型 EIP 不一定代表以太坊社区的共识或建议，因此用户和实施者可以随意忽略信息型 EIP 或遵循他们的建议。
 
 It is highly recommended that a single EIP contain a single key proposal or new idea. The more focused the EIP, the more successful it tends to be. A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
 
