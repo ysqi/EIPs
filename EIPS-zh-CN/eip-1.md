@@ -1,30 +1,30 @@
 ---
 eip: 1
-title: EIP Purpose and Guidelines
+title: EIP 用途与指南
 status: Living
 type: Meta
 author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, et al.
 created: 2015-10-27
 ---
 
-## What is an EIP?
+## 什么是以太坊改进提案？
 
-EIP stands for Ethereum Improvement Proposal. An EIP is a design document providing information to the Ethereum community, or describing a new feature for Ethereum or its processes or environment. The EIP should provide a concise technical specification of the feature and a rationale for the feature. The EIP author is responsible for building consensus within the community and documenting dissenting opinions.
+EIP 代表以太坊改进提案（Ethereum Improvement Proposal 缩写）。 EIP 是向以太坊社区提供信息，或描述以太坊新功能，或其流程或环境的设计文档。 EIP 应提供功能的简明技术规范和基本原理。 EIP 创作者负责在社区内建立共识并记录不同意见。
 
-## EIP Rationale
+## EIP 原理
 
-We intend EIPs to be the primary mechanisms for proposing new features, for collecting community technical input on an issue, and for documenting the design decisions that have gone into Ethereum. Because the EIPs are maintained as text files in a versioned repository, their revision history is the historical record of the feature proposal.
+我们打算将 EIP 作为主要机制，用于提出新功能、收集有关问题的社区技术输入，以及记录进入以太坊的设计决策。 由于 EIP 在版本化存储库中作为文本文件进行维护，因此其修订历史记录是功能提案的历史记录。
 
-For Ethereum implementers, EIPs are a convenient way to track the progress of their implementation. Ideally each implementation maintainer would list the EIPs that they have implemented. This will give end users a convenient way to know the current status of a given implementation or library.
+对于以太坊实施者来说，EIP 是跟踪其实施进度的便捷方式。 理想情况下，每个实施维护者都会列出他们已实施的 EIP。 这将使最终用户能够方便地了解某个实现或库的当下状态。
 
-## EIP Types
+## EIP 类型
 
-There are three types of EIP:
+EIP 有 3 种类型：
 
-- A **Standards Track EIP** describes any change that affects most or all Ethereum implementations, such as—a change to the network protocol, a change in block or transaction validity rules, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using Ethereum. Standards Track EIPs consist of three parts—a design document, an implementation, and (if warranted) an update to the [formal specification](https://github.com/ethereum/yellowpaper). Furthermore, Standards Track EIPs can be broken down into the following categories:
-  - **Core**: improvements requiring a consensus fork (e.g. [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), as well as changes that are not necessarily consensus critical but may be relevant to [“core dev” discussions](https://github.com/ethereum/pm) (for example, [EIP-90], and the miner/node strategy changes 2, 3, and 4 of [EIP-86](./eip-86.md)).
-  - **Networking**: includes improvements around [devp2p](https://github.com/ethereum/devp2p/blob/readme-spec-links/rlpx.md) ([EIP-8](./eip-8.md)) and [Light Ethereum Subprotocol](https://ethereum.org/en/developers/docs/nodes-and-clients/#light-node), as well as proposed improvements to network protocol specifications of [whisper](https://github.com/ethereum/go-ethereum/issues/16013#issuecomment-364639309) and [swarm](https://github.com/ethereum/go-ethereum/pull/2959).
-  - **Interface**: includes improvements around client [API/RPC](https://github.com/ethereum/execution-apis#README) specifications and standards, and also certain language-level standards like method names ([EIP-6](./eip-6.md)) and [contract ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html). The label “interface” aligns with the [interfaces repo] and discussion should primarily occur in that repository before an EIP is submitted to the EIPs repository.
+- **标准跟踪 EIP (Standards Track EIP)** 描述影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊的应用程序交互的任何更改或添加。 标准跟踪 EIP 由三部分组成 - 设计文档、实施和（如果有必要）对 [正式规范的更新](https://github.com/ethereum/yellowpaper)。 此外，标准跟踪 EIP 可分为以下几类：
+  - **核心 Core**: 需要共识分叉的改进(如 [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), 以及那些或许非共识关键但可能与 [“核心开发”讨论相关的变化](https://github.com/ethereum/pm)（如 [EIP-90]，矿工/节点策略更改[EIP-86](./eip-86.md)的2、3和4)。
+  - **网络 Networking**: 包括对[devp2p][] ([EIP-8](./eip-8.md)) 和[以太坊轻客户端子协议][]的改进，以及对[whisper][]和[swarm][]网络协议规范的改进。
+  - **接口 Interface **: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo](https://github. com/ethereum/interfaces) 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该存储库中。
   - **ERC**: application-level standards and conventions, including contract standards such as token standards ([EIP-20](./eip-20.md)), name registries ([EIP-137](./eip-137.md)), URI schemes, library/package formats, and wallet formats.
 
 - A **Meta EIP** describes a process surrounding Ethereum or proposes a change to (or an event in) a process. Process EIPs are like Standards Track EIPs but apply to areas other than the Ethereum protocol itself. They may propose an implementation, but not to Ethereum's codebase; they often require community consensus; unlike Informational EIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Ethereum development. Any meta-EIP is also considered a Process EIP.
@@ -385,3 +385,8 @@ Copyright and related rights waived via [CC0](../LICENSE.md).
       }
     }
     ```
+
+[devp2p]: https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol
+[以太坊轻客户端子协议]: https://github.com/ethereum/wiki/wiki/Light-client-protocol
+[whisper]: https://github.com/ethereum/go-ethereum/wiki/Whisper-Overview
+[swarm]: https://github.com/ethereum/go-ethereum/pull/2959
