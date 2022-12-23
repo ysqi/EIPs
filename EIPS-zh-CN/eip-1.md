@@ -31,7 +31,7 @@ EIP 有 3 种类型：
 
 - **信息类 EIP（ Informational EIP）** 描述以太坊的设计问题，或向以太坊社区提供一般的指南或资讯，而非提出新功能。 它不一定代表以太坊社区的共识或建议，所以用户和实施者可以自由的选择遵循或忽略信息类 EIP 所提出的建议。
 
-强烈建议单个 EIP 只包含一个关键提案或新想法。 The more focused the EIP, the more successful it tends to be. A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
+强烈建议单个 EIP 只包含一个关键提案或新想法。 EIP 的重点越突出，越能成功。 A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
 
 An EIP must meet certain minimum criteria. It must be a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
 
