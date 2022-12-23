@@ -47,7 +47,7 @@ REVERT (0xfe)
 
 ### Shepherding an EIP
 
-EIP 流程的参与方有你、拥护者或* EIP 作者*、 [*EIP 编辑人*](#eip-editors)、以及[*Ethereum 核心开发者*](https://github.com/ethereum/pm)。
+EIP 流程的参与方是你、倡导者或* EIP 作者*、 [*EIP 编辑人*](#eip-editors)、以及[*Ethereum 核心开发者*](https://github.com/ethereum/pm)。
 
 在开始编写正式的 EIP 之前，你应该仔细推敲你的想法。 首先询问以太坊社区这个想法是否是原创的，避免在基于先前研究而被拒绝的事情上浪费时间。 因此建议在[Ethereum Magicans论坛](https://ethereum-magicians.org/) 上弄一个主题来讨论它。
 
@@ -59,40 +59,40 @@ EIP 流程的参与方有你、拥护者或* EIP 作者*、 [*EIP 编辑人*](#e
 
 让客户端实施者审阅你的 EIP 的最好方法是在 AllCoreDevs 的电话会议上介绍它。 你可以通过在 [AllCoreDevs 议程 GitHub Issue](https://github.com/ethereum/pm/issues) 上发布一条链接你的 EIP 的评论来请求这样做。
 
-AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，讨论 EIP 技术优点。 第二，衡量其他客户端将实施什么。 第三，协调网络升级的EIP实施。
+AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，讨论 EIP 技术优点。 第二，衡量其他客户端将实施什么。 第三，协调网络升级的 EIP 实施。
 
-These calls generally result in a "rough consensus" around what EIPs should be implemented. This "rough consensus" rests on the assumptions that EIPs are not contentious enough to cause a network split and that they are technically sound.
+这些通话通常会就应实施哪些 EIP 达成“大致的共识”。 这种 "大致的共识 "建立在这样的假设上：EIPs 没有争议到导致网络分裂的程度，且 EIPs 在技术上是合理的。
 
-:warning: The EIPs process and AllCoreDevs call were not designed to address contentious non-technical issues, but, due to the lack of other ways to address these, often end up entangled in them. This puts the burden on client implementers to try and gauge community sentiment, which hinders the technical coordination function of EIPs and AllCoreDevs calls. If you are shepherding an EIP, you can make the process of building community consensus easier by making sure that [the Ethereum Magicians forum](https://ethereum-magicians.org/) thread for your EIP includes or links to as much of the community discussion as possible and that various stakeholders are well-represented.
+:warning: EIPs 流程和 AllCoreDevs 电话不是为了解决有争议的非技术问题，但由于缺乏其他方法来解决这些问题，最终往往被这些问题所纠缠。 这使得客户端实施者承担了尝试和衡量社区情绪的负担，这阻碍了 EIPs 和 AllCoreDevs 电话的技术协调功能。 如果你正在指导一个 EIP，你可以通过确保你的 EIP 的 [Ethereum Magicians 论坛 ](https://ethereum-magicians.org/)主题包括或链接到尽可能多的社区讨论，并确保各利益相关者得到足够的权利，从而使建立社区共识的过程更容易。
 
-*In short, your role as the champion is to write the EIP using the style and format described below, shepherd the discussions in the appropriate forums, and build community consensus around the idea.*
+*简而言之，你作为倡导者的角色是使用下面描述的风格和格式来编写 EIP，在适当的论坛上引导讨论，并围绕这个想法建立社区共识。*
 
-### EIP Process
+### EIP 流程
 
-The following is the standardization process for all EIPs in all tracks:
+以下是所有轨道中所有 EIP 的标准化流程。
 
 ![EIP Status Diagram](../assets/eip-1/EIP-process-update.jpg)
 
-**Idea** - An idea that is pre-draft. This is not tracked within the EIP Repository.
+**想法-Idea** - 一个预先起草的想法， 不在 EIP 资源库中跟踪。
 
-**Draft** - The first formally tracked stage of an EIP in development. An EIP is merged by an EIP Editor into the EIP repository when properly formatted.
+**草稿-Draft** - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑者会将 EIP 合并到 EIP 资源库中。
 
-**Review** - An EIP Author marks an EIP as ready for and requesting Peer Review.
+**评审-Review** - EIP 作者将 EIP 标记为准备好并请求同行评审。
 
-**Last Call** - This is the final review window for an EIP before moving to `Final`. An EIP editor will assign `Last Call` status and set a review end date (`last-call-deadline`), typically 14 days later.
+**终审- Last Call** - 这是 EIP 进入`Final`的终审窗口。 EIP编辑者将指定 `Last Call` 状态，并设定审查结束日期（`Last-call-deadline`），通常是14天后。
 
-If this period results in necessary normative changes it will revert the EIP to `Review`.
+如果这段时间产生了必要的规范性修改，它将把 EIP 恢复为 `Review`。
 
-**Final** - This EIP represents the final standard. A Final EIP exists in a state of finality and should only be updated to correct errata and add non-normative clarifications.
+**终稿-Final** - 该 EIP 代表了最终标准。 一个最终的 EIP 存在于最终状态，只应更新以纠正勘误和增加非规范性的澄清。
 
-**Stagnant** - Any EIP in `Draft` or `Review` or `Last Call` if inactive for a period of 6 months or greater is moved to `Stagnant`. An EIP may be resurrected from this state by Authors or EIP Editors through moving it back to `Draft` or it's earlier status. If not resurrected, a proposal may stay forever in this status.
-> *EIP Authors are notified of any algorithmic change to the status of their EIP*
+**停滞-Stagnant** - 任何处于`DRAFT` 或 `REVIEW` 或 `Last Call` 状态的EIP， 如果在 6 个月或更长时间内没有活动，将移至 `Stagnant`。 EIP 可由作者或编辑者通过将其移回`草案`或其早期状态，而从停滞中复活。 如果不复活，一个提案可能会永远停留在这个状态。
+> *EIP作者会被通知其 EIP 状态的任何算法变化。*
 
-**Withdrawn** - The EIP Author(s) have withdrawn the proposed EIP. This state has finality and can no longer be resurrected using this EIP number. If the idea is pursued at later date it is considered a new proposal.
+**撤回-Withdrawn** - EIP 作者已撤回提案的 EIP。 这种状态具有终结性，不能再使用这个 EIP 编号复活。 如果这个想法在以后继续下去，它将被视为一个新的提案。
 
-**Living** - A special status for EIPs that are designed to be continually updated and not reach a state of finality. This includes most notably EIP-1.
+**活着-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到最终状态的 EIP。 这包括最引入注目的 EIP-1。
 
-## What belongs in a successful EIP?
+## 哪些内容属于成功的 EIP ？
 
 Each EIP should have the following parts:
 
