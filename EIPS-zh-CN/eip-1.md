@@ -96,7 +96,7 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 每个 EIP 应该有以下部分：
 
-- 前言 Preamble - RFC 822 风格的标头，包含有关 EIP 的元数据，包括 EIP 编号、简短的描述性标题（最多44 个字符）、描述（最多 140 个字符）和作者的详细信息。 无论哪种类别，标题和描述都不应包含 EIP 编号。 详见[下文](./eip-1.md#eip-header-preamble)。
+- 序言 Preamble - RFC 822 风格的标头，包含有关 EIP 的元数据，包括 EIP 编号、简短的描述性标题（最多44 个字符）、描述（最多 140 个字符）和作者的详细信息。 无论哪种类别，标题和描述都不应包含 EIP 编号。 详见[下文](./eip-1.md#eip-header-preamble)。
 - 摘要 Abstract - 摘要是一个多句话（短段落）的技术摘要。 这应该是规范部分的一个非常简明扼要、可供人类阅读的版本。 有人应该能够只阅读摘要就能了解本规范的要点。
 - 动机 Motivation *（*可选）* - 动机部分对于想要改变以太坊协议的 EIP 来说至关重要。 它应当清楚地解释为什么现有的协议规范不足以解决 EIP 所解决的问题。 如果动机很明显，这部分可以省略。
 - 规范 Specification - 技术规范应描述任何新功能的语法和语义。 该规范应该足够详细，以允许当前任何以太坊平台（besu、erigon、ethereumjs、go-ethereum、nethermind或其他）的竞争性、可互操作的实现。
@@ -105,39 +105,39 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 - 测试案例 Test Cases*（可选）* - 对于影响共识变化的 EIP 来说，实施的测试案例是强制性的。 测试应该作为数据（如输入/期望输出对）内联在 EIP 中，或者包含在`./assets/eip-###/<filename> `中。 对于非核心提案，这一部分可以省略。
 - 参考实现 Refrence Implementation*（可选）* - 这是一个可选的部分，包含人们可以用来帮助理解或实现本规范的参考/示例实现。 所有 EIP 都可以省略这部分。
 - 安全考虑 Security Considerations - 所有的 EIP 都必须包含一个讨论与提议的更改相关的安全影响/考虑因素的部分。 包括对安全讨论可能很重要的信息、表面风险以及可在提案的整个生命周期内使用的信息。 例如， 包括与安全相关的设计决定、关注点、重要的讨论、特定的实施指导和陷阱、威胁和风险的概要以及如何解决这些问题。 缺少 "安全考虑因素 "部分的 EIP 提交将被拒绝。 如果没有评审人员认为有足够的安全考虑因素讨论，EIP不能进入 "最终 "状态。
-- 版权豁免 Copyright Waiver - 所有的 EIP 必须是在公共领域。 The copyright waiver MUST link to the license file and use the following wording: `Copyright and related rights waived via [CC0](../LICENSE.md).`
+- 版权豁免 Copyright Waiver - 所有的 EIP 必须是在公共领域。 版权放弃必须 MUST 链接到许可证文件并使用以下措辞。`Copyright and related rights waived via [CC0]（.../LICENSE.md）`（译：通过 CC0 放弃版权和相关权利）。
 
-## EIP Formats and Templates
+## EIP 格式和模板
 
-EIPs should be written in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format. There is a [template](https://github.com/ethereum/EIPs/blob/master/eip-template.md) to follow.
+EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 格式编写。 有一个[模板](https://github.com/ethereum/EIPs/blob/master/eip-template.md)可效仿。
 
-## EIP Header Preamble
+## EIP 头部序言
 
-Each EIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) style header preamble, preceded and followed by three hyphens (`---`). This header is also termed ["front matter" by Jekyll](https://jekyllrb.com/docs/front-matter/). The headers must appear in the following order.
+每个 EPI 必须以 [RFC 822](https://www.ietf.org/rfc/rfc822.txt) 风格的头部序言开始，前面和后面有三个连字符 (`---`)。 这个头部也被Jeyll 称为["front matter"](https://jekyllrb.com/docs/front-matter/)。 头部必须按以下顺序显示：
 
-`eip`: *EIP number* (this is determined by the EIP editor)
+`eip:` *EIP 编号*（这由 EIP 编辑者决定）。
 
-`title`: *The EIP title is a few words, not a complete sentence*
+`title:` *EIP 的标题是几个字，不是一个完整的句子*
 
-`description`: *Description is one full (short) sentence*
+`description:` *描述是一个完整的（短）句子*
 
-`author`: *The list of the author's or authors' name(s) and/or username(s), or name(s) and email(s). Details are below.*
+`author:` 作者的姓名和/或用户名，或姓名和电子邮件的列表。 详情见下文。
 
-`discussions-to`: *The url pointing to the official discussion thread*
+`* discussions-to:` *指向官方讨论主题的网址*
 
-`status`: *Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
+`status`: *状态：Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
-`last-call-deadline`: *The date last call period ends on* (Optional field, only needed when status is `Last Call`)
+`last-call-deadline`: *终审截止日期* (可选字段，只在状态为 `Last Call`时需要)。
 
-`type`: *One of `Standards Track`, `Meta`, or `Informational`*
+`type`: *`Standards Track`, `Meta`或 `Informational`中的一个*。
 
-`category`: *One of `Core`, `Networking`, `Interface`, or `ERC`* (Optional field, only needed for `Standards Track` EIPs)
+`category`: *`Core`、`Networking`、`Interface`、或`ERC`*之一 (可选字段，仅在`Standards Track` EIP 中需要)
 
-`created`: *Date the EIP was created on*
+`created:` *EIP 的创建日期*
 
-`requires`: *EIP number(s)* (Optional field)
+`* requires:` *(依赖的) EIP 编号（可选字段）*
 
-`withdrawal-reason`: *A sentence explaining why the EIP was withdrawn.* (Optional field, only needed when status is `Withdrawn`)
+`withdrawal-reason`: *一句话解释 EIP 被撤销的原因。* (可选字段，仅在状态为`Withdrawn`时需要)
 
 Headers that permit lists must separate elements with commas.
 
