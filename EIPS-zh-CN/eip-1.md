@@ -51,9 +51,9 @@ EIP 流程的参与方有你、拥护者或* EIP 作者*、 [*EIP 编辑人*](#e
 
 在开始编写正式的 EIP 之前，你应该仔细推敲你的想法。 首先询问以太坊社区这个想法是否是原创的，避免在基于先前研究而被拒绝的事情上浪费时间。 因此建议在[Ethereum Magicans论坛](https://ethereum-magicians.org/) 上弄一个主题来讨论它。
 
-一旦该想法通过审核， 您的下一个责任将是(通过EIP) 向审阅员和所有感兴趣的各方介绍您的想法， 邀请编辑、开发人员和社区，在上述频道提供反馈。 你应评估对 EIP 的兴趣是否即和实施它所涉及的工作相称，也和有哪几方必须遵守它相适应。 例如，实施核心 EIP 所需的工作将比 ERC 大得多，并且 EIP 需要以太坊客户团队表现出足够的兴趣。 将考虑消极的社区反馈，这可能会阻止您的 EIP 通过草图阶段。
+一旦该想法通过审核， 您的下一个责任将是(通过EIP) 向审阅员和所有感兴趣的各方介绍您的想法， 邀请编辑、开发人员和社区，在上述频道提供反馈。 你应评估对 EIP 的兴趣是否即和实施它所涉及的工作相称，也和有哪几方必须遵守它相适应。 例如，实施核心 EIP 所需的工作将比 ERC 大得多，并且 EIP 需要以太坊客户团队表现出足够的兴趣。 考虑社区负面反馈，这可能将会阻止您的 EIP 通过草图阶段。
 
-### Core EIPs
+### 核心 EIPs
 
 For Core EIPs, given that they require client implementations to be considered **Final** (see "EIPs Process" below), you will need to either provide an implementation for clients or convince clients to implement your EIP.
 
