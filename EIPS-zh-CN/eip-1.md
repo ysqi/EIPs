@@ -55,11 +55,11 @@ EIP 流程的参与方有你、拥护者或* EIP 作者*、 [*EIP 编辑人*](#e
 
 ### 核心 EIPs
 
-For Core EIPs, given that they require client implementations to be considered **Final** (see "EIPs Process" below), you will need to either provide an implementation for clients or convince clients to implement your EIP.
+对于核心EIPs，鉴于它们要求客户端实现才能被被认为 **Final** (见下文 “EIPs 流程”) ，你需要为客户端提供一个实现或者说服客户端实现你的 EIP。
 
-The best way to get client implementers to review your EIP is to present it on an AllCoreDevs call. You can request to do so by posting a comment linking your EIP on an [AllCoreDevs agenda GitHub Issue](https://github.com/ethereum/pm/issues).
+让客户端实施者审阅你的 EIP 的最好方法是在 AllCoreDevs 的电话会议上介绍它。 你可以通过在 [AllCoreDevs 议程 GitHub Issue](https://github.com/ethereum/pm/issues) 上发布一条链接你的 EIP 的评论来请求这样做。
 
-The AllCoreDevs call serves as a way for client implementers to do three things. First, to discuss the technical merits of EIPs. Second, to gauge what other clients will be implementing. Third, to coordinate EIP implementation for network upgrades.
+AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，讨论 EIP 技术优点。 第二，衡量其他客户端将实施什么。 第三，协调网络升级的EIP实施。
 
 These calls generally result in a "rough consensus" around what EIPs should be implemented. This "rough consensus" rests on the assumptions that EIPs are not contentious enough to cause a network split and that they are technically sound.
 
