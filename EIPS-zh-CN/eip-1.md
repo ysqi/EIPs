@@ -31,27 +31,27 @@ EIP 有 3 种类型：
 
 - **信息类 EIP（ Informational EIP）** 描述以太坊的设计问题，或向以太坊社区提供一般的指南或资讯，而非提出新功能。 它不一定代表以太坊社区的共识或建议，所以用户和实施者可以自由的选择遵循或忽略信息类 EIP 所提出的建议。
 
-强烈建议单个 EIP 只包含一个关键提案或新想法。 EIP 的重点越突出，越能成功。 A change to one client doesn't require an EIP; a change that affects multiple clients, or defines a standard for multiple apps to use, does.
+强烈建议单个 EIP 只包含一个关键提案或新想法。 EIP 的重点越突出，就越能成功。 对单个客户端的更改不需要 EIP；影响多个客户端或供多个应用程序使用的标准定义的更改就需要 EIP。
 
-An EIP must meet certain minimum criteria. It must be a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
+EIP 必须满足某些最低标准。 它必须清楚和完整地描述提案的改进措施。 这种增强必须是一种净改进。 提案的实施（如果适用）必须是可靠的，并且不得使协议过度复杂化。
 
-### Special requirements for Core EIPs
+### 核心 EIP 的特殊要求
 
-If a **Core** EIP mentions or proposes changes to the EVM (Ethereum Virtual Machine), it should refer to the instructions by their mnemonics and define the opcodes of those mnemonics at least once. A preferred way is the following:
+如果 **核心** EIP 提到或建议对 EVM (以太坊虚拟机) 进行更改，则应通过其助记符引用指令，并至少定义一次这些助记符的操作码。 首选方式如下：
 
 ```
 REVERT (0xfe)
 ```
 
-## EIP Work Flow
+## EIP 工作流程
 
 ### Shepherding an EIP
 
-Parties involved in the process are you, the champion or *EIP author*, the [*EIP editors*](#eip-editors), and the [*Ethereum Core Developers*](https://github.com/ethereum/pm).
+EIP 流程的参与方有你、拥护者或* EIP 作者*、 [*EIP 编辑人*](#eip-editors)、以及[*Ethereum 核心开发者*](https://github.com/ethereum/pm)。
 
-Before you begin writing a formal EIP, you should vet your idea. Ask the Ethereum community first if an idea is original to avoid wasting time on something that will be rejected based on prior research. It is thus recommended to open a discussion thread on [the Ethereum Magicians forum](https://ethereum-magicians.org/) to do this.
+在开始编写正式的 EIP 之前，你应该仔细推敲你的想法。 首先询问以太坊社区这个想法是否是原创的，避免在基于先前研究而被拒绝的事情上浪费时间。 因此建议在[Ethereum Magicans论坛](https://ethereum-magicians.org/) 上弄一个主题来讨论它。
 
-Once the idea has been vetted, your next responsibility will be to present (by means of an EIP) the idea to the reviewers and all interested parties, invite editors, developers, and the community to give feedback on the aforementioned channels. You should try and gauge whether the interest in your EIP is commensurate with both the work involved in implementing it and how many parties will have to conform to it. For example, the work required for implementing a Core EIP will be much greater than for an ERC and the EIP will need sufficient interest from the Ethereum client teams. Negative community feedback will be taken into consideration and may prevent your EIP from moving past the Draft stage.
+一旦该想法通过审核， 您的下一个责任将是(通过EIP) 向审阅员和所有感兴趣的各方介绍您的想法， 邀请编辑、开发人员和社区，在上述频道提供反馈。 你应评估对 EIP 的兴趣是否即和实施它所涉及的工作相称，也和有哪几方必须遵守它相适应。 例如，实施核心 EIP 所需的工作将比 ERC 大得多，并且 EIP 需要以太坊客户团队表现出足够的兴趣。 将考虑消极的社区反馈，这可能会阻止您的 EIP 通过草图阶段。
 
 ### Core EIPs
 
