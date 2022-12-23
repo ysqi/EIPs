@@ -139,9 +139,9 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 `withdrawal-reason`: *一句话解释 EIP 被撤销的原因。* (可选字段，仅在状态为`Withdrawn`时需要)
 
-Headers that permit lists must separate elements with commas.
+头部可能有的列表必须用逗号分隔元素。
 
-Headers requiring dates will always do so in the format of ISO 8601 (yyyy-mm-dd).
+头部要求日期始终以 ISO 8601的格式（yyyy-mm-dd）进行。
 
 ### `author` header
 
