@@ -294,7 +294,7 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 - Matt Garnett (@lightclient)
 - Sam Wilson (@SamWilsn)
 
-Emeritus EIP editors are
+荣誉退休 EIP 编辑们：
 
 - Casey Detrio (@cdetrio)
 - Hudson Jameson (@Souptacular)
@@ -304,14 +304,14 @@ Emeritus EIP editors are
 - Nick Savers (@nicksavers)
 - Vitalik Buterin (@vbuterin)
 
-If you would like to become an EIP editor, please check [EIP-5069](./eip-5069.md).
+如果你想成为 EIP 编辑，请查看 [EIP-5069](./eip-5069.md)。
 
-## EIP Editor Responsibilities
+## EIP 编辑职责
 
-For each new EIP that comes in, an editor does the following:
+对于每个新进入的 EIP，编辑会做如下工作：
 
-- Read the EIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
-- The title should accurately describe the content.
+- 阅读EIP，检查它是否准备好了：健全且完整。 这些想法必须在技术上有意义，即使它们似乎不可能进入 final 状态。
+- 标题应准确地描述内容。
 - Check the EIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub flavored Markdown), code style
 
 If the EIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
