@@ -145,96 +145,96 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 ### `author` 头
 
-The `author` header lists the names, email addresses or usernames of the authors/owners of the EIP. Those who prefer anonymity may use a username only, or a first name and a username. The format of the `author` header value must be:
+The `author` 头列出 EIP 的作者/所有者的姓名、电子邮件地址或用户名。 喜欢匿名的人可以只使用用户名，或使用名字和用户名。 `author` 头内容格式必须是：
 
 > Random J. User &lt;address@dom.ain&gt;
 
-or
+或
 
 > Random J. User (@username)
 
-if the email address or GitHub username is included, and
+如果包括电子邮件地址或 GitHub 用户名，以及
 
 > Random J. User
 
-if the email address is not given.
+如果没有给出电子邮件地址。
 
-It is not possible to use both an email and a GitHub username at the same time. If important to include both, one could include their name twice, once with the GitHub username, and once with the email.
+不可能同时使用电子邮件和 GitHub 用户名。 如果必须同时使用，可以把名字写两次，一次是GitHub用户名，另一次是电子邮件。
 
-At least one author must use a GitHub username, in order to get notified on change requests and have the capability to approve or reject them.
+必须至少有一位作者使用 GitHub 用户名，这样才能收到修改请求的通知，并有权批准或拒绝它们。
 
-### `discussions-to` header
+### `discussions-to` 头
 
-While an EIP is a draft, a `discussions-to` header will indicate the URL where the EIP is being discussed.
+虽然 EIP 是草稿，但 `discussions-to` 头将指明讨论 EIP 的网址。
 
-The preferred discussion URL is a topic on [Ethereum Magicians](https://ethereum-magicians.org/). The URL cannot point to Github pull requests, any URL which is ephemeral, and any URL which can get locked over time (i.e. Reddit topics).
+首选讨论网站是 [Ethereum Magicans](https://ethereum-magicians.org/) 的主题贴。 该网址不能指向 Github PR，任何短暂的网址，以及任何可能随着时间推移而被锁定的网址（如 Reddit 主题贴）。
 
-### `type` header
+### `type` 头
 
-The `type` header specifies the type of EIP: Standards Track, Meta, or Informational. If the track is Standards please include the subcategory (core, networking, interface, or ERC).
+`type` 头指定了 EIP 类型: Standards Track、Meta、 或 Informational。 如果类目是标准类，请包括子类别（core、 networking、 interface 或 ERC）。
 
-### `category` header
+### `category` 头
 
-The `category` header specifies the EIP's category. This is required for standards-track EIPs only.
+`category` 头指定 EIP 的类别。 这仅适用于标准类 EIP。
 
-### `created` header
+### `created` 头
 
-The `created` header records the date that the EIP was assigned a number. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
+`created`头记录了 EIP 被分配一个编号的日期。 这两个头都应采用 yyyy-mm-dd 格式，例如 2001-08-14。
 
-### `requires` header
+### `requires` 头
 
-EIPs may have a `requires` header, indicating the EIP numbers that this EIP depends on. If such a dependency exists, this field is required.
+EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 如果存在这种依赖关系，此字段是必需的。
 
-A `requires` dependency is created when the current EIP cannot be understood or implemented without a concept or technical element from another EIP. Merely mentioning another EIP does not necessarily create such a dependency.
+当当前 EIP 在没有另一个 EIP 的概念或技术要素的情况下不能被理解或实施时，就会产生`requires`依赖关系。 仅提及另一个 EIP 并不一定会产生这种依赖关系。
 
-## Linking to External Resources
+## 关联外部资源
 
-Other than the specific exceptions listed below, links to external resources **SHOULD NOT** be included. External resources may disappear, move, or change unexpectedly.
+除了下面列出的特定例外情况，外部资源的链接 **不应该** 包括在内。 外部资源可能消失、移动或突发变更。
 
-The process governing permitted external resources is described in [EIP-5757](./eip-5757.md).
+管理允许的外部资源的流程在 [EIP-5757](./eip-5757.md) 中描述。
 
-### Consensus Layer Specifications
+### 共识层规范
 
-Links to the Ethereum Consensus Layer Specifications may be included using normal markdown syntax, such as:
+以太坊共识层规范的链接可以使用正常的 markdown 语法包含，如：
 
 ```markdown
 [Beacon Chain](https://github.com/ethereum/consensus-specs/blob/26695a9fdb747ecbe4f0bb9812fedbc402e5e18c/specs/sharding/beacon-chain.md)
 ```
 
-Which renders to:
+渲染到:
 
 [Beacon Chain](https://github.com/ethereum/consensus-specs/blob/26695a9fdb747ecbe4f0bb9812fedbc402e5e18c/specs/sharding/beacon-chain.md)
 
-Permitted Consensus Layer Specifications URLs must anchor to a specific commit, and so must match this regular expression:
+允许的共识层规范的网址必须锚定到一个特定的提交，因此必须匹配这个正则表达式。
 
 ```regex
 ^https://github.com/ethereum/consensus-specs/blob/[0-9a-f]{40}/.*$
 ```
 
-### Networking Specifications
+### 网络规范
 
-Links to the Ethereum Networking Specifications may be included using normal markdown syntax, such as:
+以太坊网络规范的链接可以使用正常的 markdown 语法包含，如：
 
 ```markdown
 [Ethereum Wire Protocol](https://github.com/ethereum/devp2p/blob/40ab248bf7e017e83cc9812a4e048446709623e8/caps/eth.md)
 ```
 
-Which renders as:
+渲染到:
 
 [Ethereum Wire Protocol](https://github.com/ethereum/devp2p/blob/40ab248bf7e017e83cc9812a4e048446709623e8/caps/eth.md)
 
-Permitted Networking Specifications URLs must anchor to a specific commit, and so must match this regular expression:
+允许的网络规范的网址必须锚定到一个特定的提交，因此必须匹配这个正则表达式。
 
 ```regex
 ^https://github.com/ethereum/devp2p/blob/[0-9a-f]{40}/.*$
 ```
 
-### Digital Object Identifier System
+### 数字对象标识符系统
 
-Links qualified with a Digital Object Identifier (DOI) may be included using the following syntax:
+符合数字对象标识符 (DOI) 条件的链接可以使用以下语法：
 
 ````markdown
-This is a sentence with a footnote.[^1]
+这是一个带有脚注的句子。[^1]
 
 [^1]:
     ```csl-json
@@ -263,8 +263,8 @@ This is a sentence with a footnote.[^1]
     }
     ```
 ````
-Which renders to:
-This is a sentence with a footnote.[^1]
+渲染到:
+这是一个带有脚注的句子。[^1]
 
 See the [Citation Style Language Schema](https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json) for the supported fields. In addition to passing validation against that schema, references must include a DOI and at least one URL.
 
