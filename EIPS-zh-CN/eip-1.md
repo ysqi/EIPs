@@ -143,7 +143,7 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 头部要求日期始终以 ISO 8601的格式（yyyy-mm-dd）进行。
 
-### `author` header
+### `author` 头
 
 The `author` header lists the names, email addresses or usernames of the authors/owners of the EIP. Those who prefer anonymity may use a username only, or a first name and a username. The format of the `author` header value must be:
 
