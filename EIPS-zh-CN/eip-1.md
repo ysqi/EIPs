@@ -7,13 +7,13 @@ author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, et
 created: 2015-10-27
 ---
 
-## 什么是以太坊改进提案？
+## 什么是 EIP ？
 
-EIP 代表以太坊改进提案（Ethereum Improvement Proposal 缩写）。 EIP 是向以太坊社区提供信息，或描述以太坊新功能，或其流程或环境的设计文档。 EIP 应提供功能的简明技术规范和基本原理。 EIP 创作者负责在社区内建立共识并记录不同意见。
+EIP 是指以太坊改进提案（Ethereum Improvement Proposal ）。 EIP 是一个向以太坊社区提供信息的设计文档，或描述以太坊或其流程或环境的新功能。 EIP 应提供功能的简明技术规范和功能的理由。 EIP 作者负责在社区内建立共识并记录不同的意见。
 
 ## EIP 原理
 
-我们打算将 EIP 作为主要机制，用于提出新功能、收集有关问题的社区技术输入，以及记录进入以太坊的设计决策。 由于 EIP 在版本化存储库中作为文本文件进行维护，因此其修订历史记录是功能提案的历史记录。
+我们打算让 EIP 成为主要机制，用于提出新功能，收集社区对某一问题的技术意见，并记录以太坊的设计决策。 由于 EIP 在版本化存储库中作为文本文件进行维护，因此其修订历史记录是功能提案的历史记录。
 
 对于以太坊实施者来说，EIP 是跟踪其实施进度的便捷方式。 理想情况下，每个实施维护者都会列出他们已实施的 EIP。 这将使最终用户能够方便地了解某个实现或库的当下状态。
 
@@ -21,13 +21,13 @@ EIP 代表以太坊改进提案（Ethereum Improvement Proposal 缩写）。 EIP
 
 EIP 有 3 种类型：
 
-- **标准类 EIP (Standards Track EIP)** 描述影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊的应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施和（如果有必要）对 [正式规范的更新](https://github.com/ethereum/yellowpaper)。 此外，标准类 EIP 可分为以下几类：
+- **标准类 EIP (Standards Track EIP)** 描述影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊的应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施和（如果有必要）对 [正式规范](https://github.com/ethereum/yellowpaper)的更新。 此外，标准类 EIP 可分为以下几类：
   - **核心 Core**: 需要共识分叉的改进(如 [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), 以及那些或许非共识关键但可能与 [“核心开发”讨论相关的变化](https://github.com/ethereum/pm)（如 [EIP-90]，矿工/节点策略更改[EIP-86](./eip-86.md)的2、3和4)。
-  - **网络 Networking**: 包括对[devp2p][] ([EIP-8](./eip-8.md)) 和[以太坊轻客户端子协议][]的改进，以及对[whisper][]和[swarm][]网络协议规范的改进。
-  - **接口 Interface **: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo](https://github. com/ethereum/interfaces) 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该存储库中。
-  - **应用标准 ERC**：是应用程序级别的标准和约定，包括合约标准，如代币标准 ([ERC-20](./eip-20.md))、名称注册 ([ERC-137](./eip-137.md))、URI 方案、库/包格式和钱包格式等。
+  - **网络 Networking**: 包括对[devp2p](https://github.com/ethereum/devp2p/blob/readme-spec-links/rlpx.md) ([EIP-8](./eip-8.md)) 和[以太坊轻客户端子协议](https://ethereum.org/en/developers/docs/nodes-and-clients/#light-node)的改进，以及对[whisper](https://github.com/ethereum/go-ethereum/issues/16013#issuecomment-364639309)和[swarm](https://github.com/ethereum/go-ethereum/pull/2959)网络协议规范的改进。
+  - **接口 Interface **: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo] 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该库中。
+  - **应用层标准 ERC**：是应用层面的标准和约定，包括合约标准，如代币标准 ([ERC-20](./eip-20.md))、名称注册 ([ERC-137](./eip-137.md))、URI 方案、库/包格式和钱包格式等。
 
-- **变化类 EIP ( Meta EIP )** 描述围绕以太坊的流程或提议对流程（或事件）进行更改。 流程 EIP 类似于标准跟踪 EIP，但流程 EIP 适用于以太坊协议之外的领域。 他们可能会提出一个实施方案，但不会针对以太坊代码库；他们通常需要社区达成共识；与信息 EIP 不同，它们不仅仅是建议，用户一般不能随意忽略它们。 这方面的提案包括程序、指南、决策过程的更改以及以太坊开发中使用的工具或环境的更改。 任何变化类 EIP 也会被视为流程 EIP。
+- **元 EIP ( Meta EIP)** 描述了围绕以太坊的一个流程或提出对一个流程的变更（或一个事件）。 流程 EIP 类似于标准跟踪 EIP，但流程 EIP 适用于以太坊协议之外的领域。 他们可能会提出一个实施方案，但不会针对以太坊代码库；他们通常需要社区达成共识；与信息 EIP 不同，它们不仅仅是建议，用户一般不能随意忽略它们。 这方面的提案包括程序、指南、决策过程的更改以及以太坊开发中使用的工具或环境的更改。 任何变化类 EIP 也会被视为流程 EIP。
 
 - **信息类 EIP（ Informational EIP）** 描述以太坊的设计问题，或向以太坊社区提供一般的指南或资讯，而非提出新功能。 它不一定代表以太坊社区的共识或建议，所以用户和实施者可以自由的选择遵循或忽略信息类 EIP 所提出的建议。
 
@@ -71,7 +71,7 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 以下是所有轨道中所有 EIP 的标准化流程。
 
-![EIP Status Diagram](../assets/eip-1/EIP-process-update.jpg)
+![EIP 状态图](../assets/eip-1/EIP-process-update.jpg)
 
 **想法-Idea** - 一个预先起草的想法， 不在 EIP 资源库中跟踪。
 
@@ -312,53 +312,53 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 
 - 阅读EIP，检查它是否准备好了：健全且完整。 这些想法必须在技术上有意义，即使它们似乎不可能进入 final 状态。
 - 标题应准确地描述内容。
-- Check the EIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub flavored Markdown), code style
+- 检查 EIP 语言（拼写、语法、句子结构等）、标记（GitHub 风格的 Markdown ）、代码风格
 
-If the EIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
+如果 EIP 还没有准备好，编辑会把它发回给作者进行修改，并附有具体指示。
 
-Once the EIP is ready for the repository, the EIP editor will:
+EIP 一旦准备就绪，EIP 编辑器将：
 
-- Assign an EIP number (generally the PR number, but the decision is with the editors)
-- Merge the corresponding [pull request](https://github.com/ethereum/EIPs/pulls)
-- Send a message back to the EIP author with the next step.
+- 分配一个 EIP 编号(一般为 PR 编号，但决定权在于编辑)
+- 合并对应的 [拉取请求](https://github.com/ethereum/EIPs/pulls)
+- 向 EIP 作者发回信息，说明下一步工作。
 
-Many EIPs are written and maintained by developers with write access to the Ethereum codebase. The EIP editors monitor EIP changes, and correct any structure, grammar, spelling, or markup mistakes we see.
+许多 EIP 是由拥有以太坊代码写入权限的开发人员编写和维护的。 EIP 编辑们监控 EIP 的变化，并纠正我们看到的任何结构、语法、拼写或标记错误。
 
-The editors don't pass judgment on EIPs. We merely do the administrative & editorial part.
+编辑们不对 EIP 进行评判。 我们只是做了行政管理& 编辑的部分。
 
-## Style Guide
+## 风格指南
 
-### Titles
+### 标题
 
-The `title` field in the preamble:
+序言中的 `title` 字段:
 
-- Should not include the word "standard" or any variation thereof; and
-- Should not include the EIP's number.
+- 不应包括 “standard” 一词或其任何变体；
+- 且不应包含 EIP 编号。
 
-### Descriptions
+### 描述
 
-The `description` field in the preamble:
+序言中的 `description` 字段:
 
-- Should not include the word "standard" or any variation thereof; and
-- Should not include the EIP's number.
+- 不应包括 “standard” 一词或其任何变体；
+- 且不应包含 EIP 编号。
 
-### EIP numbers
+### EIP 编号
 
-When referring to an EIP by number, it should be written in the hyphenated form `EIP-X` where `X` is the EIP's assigned number.
+当通过编号引用 EIP 时，应以带连字符的形式书写 `EIP-X`，其中 `X` 是 EIP 的分配编号。
 
-### RFC 2119 and RFC 8174
+### RFC 2119 和 RFC 8174
 
-EIPs are encouraged to follow [RFC 2119](https://www.ietf.org/rfc/rfc2119.html) and [RFC 8174](https://www.ietf.org/rfc/rfc8174.html) for terminology and to insert the following at the beginning of the Specification section:
+我们鼓励 EIP 遵循 [RFC 2119](https://www.ietf.org/rfc/rfc2119.html) 和 [RFC 8174](https://www.ietf.org/rfc/rfc8174.html) 的术语，并在规范部分的开头插入以下内容：
 
-> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
+> 本文件中的关键词“必须（MUST）”、“禁止（MUST NOT）”、“必要的（REQUIRED）”、“应当（SHALL）”、“不应（SHALL NOT）”、“应当（SHOULD）”、“不应（SHOULD NOT）”、“推荐的（RECOMMENDED）”、“不推荐（NOT RECOMMENDED）”、“可能（MAY）”和“可选的（OPTIONAL）” 按 RFC 2119 和 RFC 8174 的规定进行解释。
 
-## History
+## 历史
 
-This document was derived heavily from [Bitcoin's BIP-0001](https://github.com/bitcoin/bips) written by Amir Taaki which in turn was derived from [Python's PEP-0001](https://peps.python.org/). In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the Ethereum Improvement Process, and should not be bothered with technical questions specific to Ethereum or the EIP. Please direct all comments to the EIP editors.
+此文档在很大程度上源自 Amir Taaki 编写的[比特币 BIP-0001](https://github.com/bitcoin/bips)，而 BIP-0001 又源于[ Python 的 PEP-0001](https://peps.python.org/)。 很多地方的文字都是简单的复制和修改。 尽管 PEP-0001 文本是由 Barry Warsaw、Jeremy Hylton 和 David Goodger 编写的，但他们不对其在以太坊改进过程中的使用负责，也不应被打扰处理与以太坊或 EIP 有关的技术问题。 请将所有意见直接提交给 EIP 编辑们。
 
-## Copyright
+## 版权
 
-Copyright and related rights waived via [CC0](../LICENSE.md).
+通过 [CC0](../LICENSE.md) 放弃版权和相关权利。
 [^1]:
     ```csl-json
     {
@@ -385,8 +385,3 @@ Copyright and related rights waived via [CC0](../LICENSE.md).
       }
     }
     ```
-
-[devp2p]: https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol
-[以太坊轻客户端子协议]: https://github.com/ethereum/wiki/wiki/Light-client-protocol
-[whisper]: https://github.com/ethereum/go-ethereum/wiki/Whisper-Overview
-[swarm]: https://github.com/ethereum/go-ethereum/pull/2959
