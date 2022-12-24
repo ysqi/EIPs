@@ -266,27 +266,27 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 渲染到:
 这是一个带有脚注的句子。[^1]
 
-See the [Citation Style Language Schema](https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json) for the supported fields. In addition to passing validation against that schema, references must include a DOI and at least one URL.
+关于支持的字段，请参见[引用文献样式语言模式](https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json)。 除了通过对该模式的验证外，参考文献必须包括 DOI 和至少一个 URL。
 
-The top-level URL field must resolve to a copy of the referenced document which can be viewed at zero cost. Values under `additional-urls` must also resolve to a copy of the referenced document, but may charge a fee.
+顶层的 URL字段必须解析到一个可以零成本查看参考文献的副本。 `additional-urls`下的值也必须解析到参考文献的副本，但可能会收取费用。
 
-## Linking to other EIPs
+## 关联到其他 EIP
 
-References to other EIPs should follow the format `EIP-N` where `N` is the EIP number you are referring to.  Each EIP that is referenced in an EIP **MUST** be accompanied by a relative markdown link the first time it is referenced, and **MAY** be accompanied by a link on subsequent references.  The link **MUST** always be done via relative paths so that the links work in this GitHub repository, forks of this repository, the main EIPs site, mirrors of the main EIP site, etc.  For example, you would link to this EIP as `./eip-1.md`.
+对其他 EIP 的引用应遵循 `EIP-N` 格式，其中 `N` 是您所引用的 EIP 编号。  在 EIP 中被引用的每个 EIP **必须 MUST **在第一次被引用时都有一个相对的markdown 链接，而**可以 MAY**在随后的引用都有一个链接。  该链接 **必须 MUST** 始终用相对路径，这样链接才能在 GitHub 存储库、此存储库的分支、 EIP 主站点、EIP 主站点的镜像中工作， 例如，您可以使用 `./eip-1.md` 链接到此 EIP。
 
-## Auxiliary Files
+## 附属文件
 
-Images, diagrams and auxiliary files should be included in a subdirectory of the `assets` folder for that EIP as follows: `assets/eip-N` (where **N** is to be replaced with the EIP number). When linking to an image in the EIP, use relative links such as `../assets/eip-1/image.png`.
+图片、图表和辅助文件应包含在该 EIP 的 `assets` 文件夹的子目录中，如下所示：`assets/eip-N`（将 **N** 替换为 EIP 编号）。 链接到 EIP 中的图片时，使用相对链接，例如 `../assets/eip-1/image.png`。
 
-## Transferring EIP Ownership
+## 转让 EIP 所有权
 
-It occasionally becomes necessary to transfer ownership of EIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred EIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the EIP process, or has fallen off the face of the 'net (i.e. is unreachable or isn't responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the EIP. We try to build consensus around an EIP, but if that's not possible, you can always submit a competing EIP.
+有时需要将 EIP 的所有权转让给新的倡导者。 一般来说，我们希望保留原作者作为转让的 EIP 的共同作者，但这完全取决于原作者。 转让所有权的一个很好的理由是，原作者不再有时间或兴趣来更新它或跟进 EIP 流程，或者已经从网上失联（即无法联系或不回复电子邮件）。 转让所有权的一个坏理由是你不同意 EIP 的发展方向。 我们试图围绕一个EIP建立共识，但如果这不可能，你总能提交一个竞争性的EIP。
 
-If you are interested in assuming ownership of an EIP, send a message asking to take over, addressed to both the original author and the EIP editor. If the original author doesn't respond to the email in a timely manner, the EIP editor will make a unilateral decision (it's not like such decisions can't be reversed :)).
+如果你有兴趣获得 EIP 的所有权，请向原作者和 EIP 编辑者发送要求接管的消息。 如果原作者没有及时回复邮件，EIP 编辑人会做出单方面的决定（这种决定也不是不能推翻的:））。
 
-## EIP Editors
+## EIP 编辑
 
-The current EIP editors are
+当前的 EIP 编辑们是
 
 - Alex Beregszaszi (@axic)
 - Gavin John (@Pandapip1)
