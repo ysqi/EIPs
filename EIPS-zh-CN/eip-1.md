@@ -9,7 +9,7 @@ created: 2015-10-27
 
 ## 什么是 EIP ？
 
-EIP 是指以太坊改进提案（Ethereum Improvement Proposal ）。 EIP 是一个向以太坊社区提供信息的设计文档，或描述以太坊或其流程或环境的新功能。 EIP 应提供功能的简明技术规范和功能的理由。 EIP 作者负责在社区内建立共识并记录不同的意见。
+EIP 是指以太坊改进提案（Ethereum Improvement Proposal ）。 EIP 是一份向以太坊社区提供信息，或描述以太坊新功能、或其流程、或其环境的设计文档。 EIP 应提供功能的简明技术规范和基本原理。 EIP 作者有责任在社区内建立 EIP 共识并记录异议。
 
 ## EIP 原理
 
