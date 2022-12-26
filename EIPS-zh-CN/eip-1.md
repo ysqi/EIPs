@@ -9,25 +9,25 @@ created: 2015-10-27
 
 ## 什么是 EIP ？
 
-EIP 是指以太坊改进提案（Ethereum Improvement Proposal ）。 EIP 是一份向以太坊社区提供信息，或描述以太坊新功能、或其流程、或其环境的设计文档。 EIP 应提供功能的简明技术规范和基本原理。 EIP 作者有责任在社区内建立 EIP 共识并记录异议。
+EIP 是指以太坊改进提案（Ethereum Improvement Proposal ）。 EIP 是一份向以太坊社区提供信息，或描述以太坊新功能、流程、环境的设计文档。 EIP 应提供功能的简明技术规范和基本原理。 EIP 作者有责任在社区内建立 EIP 共识并记录异议。
 
 ## EIP 原理
 
-我们打算让 EIP 成为主要机制，用于提出新功能，收集社区对某一问题的技术意见，并记录以太坊的设计决策。 由于 EIP 在版本化存储库中作为文本文件进行维护，因此其修订历史记录是功能提案的历史记录。
+我们打算让 EIP 成为主要机制，用于提出新功能，收集社区对某一问题的技术意见，并记录以太坊的设计决策。 因 EIP 以文本文件在版本化存储库中维护，因此版本修订历史就是功能提案的历史记录。
 
-对于以太坊实施者来说，EIP 是跟踪其实施进度的便捷方式。 理想情况下，每个实施维护者都会列出他们已实施的 EIP。 这将使最终用户能够方便地了解某个实现或库的当下状态。
+对于以太坊实施者来说，EIP 是跟踪其实施进度的便捷方式。 理想情况下，每个实施维护者都会列出他们已实施的 EIP。 这将给终端用户提供一个方便的方式来了解一个特定的实施或库的当前状态。
 
 ## EIP 类型
 
 EIP 有 3 种类型：
 
-- **标准类 EIP (Standards Track EIP)** 描述影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊的应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施和（如果有必要）对 [正式规范](https://github.com/ethereum/yellowpaper)的更新。 此外，标准类 EIP 可分为以下几类：
+- **标准类 EIP (Standards Track EIP)** 描述了影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施、（如果有必要）对 [正式规范](https://github.com/ethereum/yellowpaper)的更新。 此外，标准类 EIP 可分为以下几类：
   - **核心 Core**: 需要共识分叉的改进(如 [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), 以及那些或许非共识关键但可能与 [“核心开发”讨论相关的变化](https://github.com/ethereum/pm)（如 [EIP-90]，矿工/节点策略更改[EIP-86](./eip-86.md)的2、3和4)。
   - **网络 Networking**: 包括对[devp2p](https://github.com/ethereum/devp2p/blob/readme-spec-links/rlpx.md) ([EIP-8](./eip-8.md)) 和[以太坊轻客户端子协议](https://ethereum.org/en/developers/docs/nodes-and-clients/#light-node)的改进，以及对[whisper](https://github.com/ethereum/go-ethereum/issues/16013#issuecomment-364639309)和[swarm](https://github.com/ethereum/go-ethereum/pull/2959)网络协议规范的改进。
-  - **接口 Interface **: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo] 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该库中。
+  - **接口 Interface**: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo] 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该库中。
   - **应用层标准 ERC**：是应用层面的标准和约定，包括合约标准，如代币标准 ([ERC-20](./eip-20.md))、名称注册 ([ERC-137](./eip-137.md))、URI 方案、库/包格式和钱包格式等。
 
-- **元 EIP ( Meta EIP)** 描述了围绕以太坊的一个流程或提出对一个流程的变更（或一个事件）。 流程 EIP 类似于标准跟踪 EIP，但流程 EIP 适用于以太坊协议之外的领域。 他们可能会提出一个实施方案，但不会针对以太坊代码库；他们通常需要社区达成共识；与信息类 EIP 不同，它们不仅仅是建议，用户一般不能随意忽略它们。 这方面的提案包括程序、指南、决策过程的更改以及以太坊开发中使用的工具或环境的更改。 任何 meta-EIP 也会被视为一个流程 EIP。
+- **元 EIP ( Meta EIP)** 描述了围绕以太坊的一个流程或提出对一个流程的变更（或一个事件）。 流程 EIP 类似于标准类 EIP，但流程 EIP 适用于以太坊协议之外的领域。 他们可能会提出一个实施方案，但不会针对以太坊代码库；他们通常需要社区达成共识；与信息类 EIP 不同，它们不仅仅是建议，用户一般不能随意忽略它们。 这方面的提案包括程序、指南、决策过程的更改以及以太坊开发中使用的工具或环境的更改。 任何 meta-EIP 也会被视为一个流程 EIP。
 
 - **信息类 EIP（ Informational EIP）** 描述以太坊的设计问题，或向以太坊社区提供一般的指南或资讯，而非提出新功能。 它不一定代表以太坊社区的共识或建议，所以用户和实施者可以自由的选择遵循或忽略信息类 EIP 所提出的建议。
 
