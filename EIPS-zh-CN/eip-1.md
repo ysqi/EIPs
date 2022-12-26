@@ -263,7 +263,9 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
     }
     ```
 ````
+
 渲染到:
+
 这是个带有脚注的句子。[^1]
 
 关于支持的字段，请参见[引用文献样式语言模式](https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json)。 除了通过对该模式的验证外，参考文献必须包括 DOI 和至少一个 URL。
