@@ -21,7 +21,7 @@ EIP 是指以太坊改进提案（Ethereum Improvement Proposal ）。 EIP 是�
 
 EIP 有 3 种类型：
 
-- **标准类 EIP (Standards Track EIP)** 描述了影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施、（如果有必要）对 [正式规范](https://github.com/ethereum/yellowpaper)的更新。 此外，标准类 EIP 可分为以下几类：
+- **标准类 EIP (Standards Track EIP)** 描述了影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施、（如果有必要）对 [正式规范](https://github.com/ethereum/yellowpaper)的更新。 此外，标准类 EIP 可细分为：
   - **核心 Core**: 需要共识分叉的改进(如 [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), 以及那些或许非共识关键但可能与 [“核心开发”讨论相关的变化](https://github.com/ethereum/pm)（如 [EIP-90]，矿工/节点策略更改[EIP-86](./eip-86.md)的2、3和4)。
   - **网络 Networking**: 包括对[devp2p](https://github.com/ethereum/devp2p/blob/readme-spec-links/rlpx.md) ([EIP-8](./eip-8.md)) 和[以太坊轻客户端子协议](https://ethereum.org/en/developers/docs/nodes-and-clients/#light-node)的改进，以及对[whisper](https://github.com/ethereum/go-ethereum/issues/16013#issuecomment-364639309)和[swarm](https://github.com/ethereum/go-ethereum/pull/2959)网络协议规范的改进。
   - **接口 Interface**: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo] 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该库中。
@@ -47,11 +47,11 @@ REVERT (0xfe)
 
 ### 牧养 EIP
 
-EIP 流程的参与方是你、倡导者或* EIP 作者*、 [*EIP 编辑*](#eip-editors)、以及[*Ethereum 核心开发者*](https://github.com/ethereum/pm)。
+EIP 流程的参与方是你、倡导者或*EIP 作者*、 [*EIP 编辑*](#eip-editors)、以及[*Ethereum 核心开发者*](https://github.com/ethereum/pm)。
 
 在开始编写正式的 EIP 之前，你应该仔细推敲你的想法。 首先询问以太坊社区这个想法是否是原创的，避免在基于先前研究而被拒绝的事情上浪费时间。 因此建议在[Ethereum Magicans论坛](https://ethereum-magicians.org/) 上打开一个主题贴来讨论它。
 
-一旦想法通过审核， 您的下一个责任将是(通过EIP) 向审稿人和所有感兴趣的各方介绍您的想法， 邀请编辑、开发人员和社区，在上述频道提供反馈。 你应尝试平衡对你的 EIP 的兴趣是否与实施它所涉及的工作以及有多少方必须遵守它相称。 例如，实施核心 EIP 所需的工作将比 ERC 大得多，并且 EIP 需要以太坊客户团队表现出足够的兴趣。 考虑社区负面反馈，这可能将会阻止您的 EIP 通过草图阶段。
+一旦想法通过审核， 您的下一个责任将是（通过EIP）向审稿人和所有感兴趣的各方介绍您的想法， 邀请编辑、开发人员和社区，在上述频道提供反馈。 你应尝试平衡对你的 EIP 的兴趣是否与实施它所涉及的工作以及有多少方必须遵守它相称。 例如，实施核心 EIP 所需的工作将比 ERC 大得多，并且 EIP 需要以太坊客户团队表现出足够的兴趣。 考虑社区负面反馈，这可能将会阻止您的 EIP 通过草图阶段。
 
 ### 核心 EIPs
 
@@ -59,7 +59,7 @@ EIP 流程的参与方是你、倡导者或* EIP 作者*、 [*EIP 编辑*](#eip-
 
 让客户端实施者审阅你的 EIP 的最好方法是在 AllCoreDevs 的电话会议上介绍它。 你可以通过在 [AllCoreDevs 议程 GitHub Issue](https://github.com/ethereum/pm/issues) 上发布一条链接你的 EIP 的评论来请求这样做。
 
-AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，讨论 EIP 技术优点。 第二，衡量其他客户端将实施什么。 第三，协调网络升级的 EIP 实施。
+AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，讨论 EIP 技术优点； 第二，衡量其他客户端将实施什么； 第三，协调网络升级的 EIP 实施。
 
 这些通话通常会就应实施哪些 EIP 达成“大致的共识”。 这种 "大致的共识 "建立在这样的假设上：EIPs 没有争议到导致网络分裂的程度，且 EIPs 在技术上是合理的。
 
@@ -75,24 +75,24 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 **想法-Idea** - 一个预先起草的想法， 不在 EIP 资源库中跟踪。
 
-**草稿-Draft** - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑者会将 EIP 合并到 EIP 资源库中。
+**草稿-Draft** - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑会将 EIP 合并到 EIP 仓库中。
 
 **评审-Review** - EIP 作者将 EIP 标记为准备好并请求同行评审。
 
-**终审- Last Call** - 这是 EIP 进入`Final`的终审窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
+**最后通知- Last Call** - 这是 EIP 进入`Final`的终审窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
 
 如果这段时间产生了必要的规范性修改，它将把 EIP 恢复为 `Review`。
 
-**终稿-Final** - 该 EIP 代表了最终标准。 一个最终的 EIP 存在于最终状态，只应更新以纠正勘误和增加非规范性的澄清。
+**最终-Final** - 该 EIP 代表了最终标准。 最终 EIP 是以最终状态存在的，只应在纠正勘误和增加非规范性澄清时进行更新。
 
-**停滞-Stagnant** - 任何处于`DRAFT` 或 `REVIEW` 或 `Last Call` 状态的EIP， 如果在 6 个月或更长时间内没有活动，将移至 `Stagnant`。 EIP 可由作者或编辑者通过将其移回`草案`或其早期状态，而从停滞中复活。 如果不复活，一个提案可能会永远停留在这个状态。
+**停滞-Stagnant** - 任何处于`DRAFT` 或 `REVIEW` 或 `Last Call` 状态的EIP， 如果在 6 个月或更长时间内没有活动，将移至 `Stagnant`。 EIP 可由作者或编辑通过将其移回`草案`或早期状态，将其从停滞中复活。 如果不复活，一个提案可能会永远停留在这个状态。
 > *EIP作者会被通知其 EIP 状态的任何算法变化。*
 
-**撤回-Withdrawn** - EIP 作者已撤回提案的 EIP。 这种状态具有终结性，不能再使用这个 EIP 编号复活。 如果这个想法在以后继续下去，它将被视为一个新的提案。
+**撤回-Withdrawn** - EIP 作者已撤回提案的 EIP。 这种状态具有终结性，不能再使用这个 EIP 编号复活。 如果这个想法在以后的日子里被推行，它将被视为一个新的提案。
 
 **活着-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到最终状态的 EIP。 这包括最引入注目的 EIP-1。
 
-## 哪些内容属于成功的 EIP ？
+## 一个成功的 EIP 应该包括什么?
 
 每个 EIP 应该有以下部分：
 
