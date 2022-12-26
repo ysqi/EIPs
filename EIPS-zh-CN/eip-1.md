@@ -79,18 +79,18 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 **评审-Review** - EIP 作者将 EIP 标记为准备好并请求同行评审。
 
-**最后通知- Last Call** - 这是 EIP 进入`Final`的终审窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
+**最后公示- Last Call** - 这是 EIP 进入`Final`的最后公示窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
 
 如果这段时间产生了必要的规范性修改，它将把 EIP 恢复为 `Review`。
 
-**最终-Final** - 该 EIP 代表了最终标准。 最终 EIP 是以最终状态存在的，只应在纠正勘误和增加非规范性澄清时进行更新。
+**终版-Final** - 该 EIP 代表了最终标准。 终版 EIP 是以最终状态存在的，只应在纠正勘误和增加非规范性澄清时进行更新。
 
 **停滞-Stagnant** - 任何处于`DRAFT` 或 `REVIEW` 或 `Last Call` 状态的EIP， 如果在 6 个月或更长时间内没有活动，将移至 `Stagnant`。 EIP 可由作者或编辑通过将其移回`草案`或早期状态，将其从停滞中复活。 如果不复活，一个提案可能会永远停留在这个状态。
 > *EIP作者会被通知其 EIP 状态的任何算法变化。*
 
 **撤回-Withdrawn** - EIP 作者已撤回提案的 EIP。 这种状态具有终结性，不能再使用这个 EIP 编号复活。 如果这个想法在以后的日子里被推行，它将被视为一个新的提案。
 
-**活着-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到最终状态的 EIP。 这包括最引入注目的 EIP-1。
+**活的-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到终版状态的 EIP。 这包括最引入注目的 EIP-1。
 
 ## 一个成功的 EIP 应该包括什么?
 
@@ -104,7 +104,7 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 - 向后兼容 Backwards Compatibility*（可选）* - 所有引入向后不兼容的 EIP 必须包括一个描述这些不兼容及其后果的部分。 EIP 必须解释作者建议如何处理这些不兼容的问题。 如果提案没有引入任何向后不兼容的问题，这部分可以省略，但如果存在向后不兼容的问题，这部分必须包括。
 - 测试案例 Test Cases*（可选）* - 对于影响共识变化的 EIP 来说，实施的测试案例是强制性的。 测试应该作为数据内联在 EIP 中(如输入/期望输出对，或者包含在`../assets/eip-###/<filename> `中）。 对于非核心提案，这一部分可以省略。
 - 参考实现 Refrence Implementation*（可选）* - 这是一个可选的部分，包含人们可以用来帮助理解或实现本规范的参考/示例实现。 所有 EIP 都可以省略这部分。
-- 安全考虑 Security Considerations - 所有的 EIP 都必须包含一个讨论与提议的更改相关的安全影响/考虑因素的部分。 包括对安全讨论可能很重要的信息、表面风险以及可在提案的整个生命周期内使用的信息。 例如， 包括与安全相关的设计决定、关注点、重要的讨论、特定的实施指导和陷阱、威胁和风险的概要以及如何解决这些问题。 缺少 "安全考虑因素 "部分的 EIP 提交将被拒绝。 如果没有评审人员认为有足够的安全考虑因素讨论，EIP不能进入 "最终 "状态。
+- 安全考虑 Security Considerations - 所有的 EIP 都必须包含一个讨论与提议的更改相关的安全影响/考虑因素的部分。 包括对安全讨论可能很重要的信息、表面风险以及可在提案的整个生命周期内使用的信息。 例如， 包括与安全相关的设计决定、关注点、重要的讨论、特定的实施指导和陷阱、威胁和风险的概要以及如何解决这些问题。 缺少 "安全考虑因素 "部分的 EIP 提交将被拒绝。 如果没有评审人员认为有足够的安全考虑因素讨论，EIP不能进入 "终版 "状态。
 - 版权豁免 Copyright Waiver - 所有的 EIP 必须是在公共领域。 版权放弃必须 MUST 链接到许可证文件并使用以下措辞。`Copyright and related rights waived via [CC0](.../LICENSE.md)`（译：通过 CC0 放弃版权和相关权利）。
 
 ## EIP 格式与模板
@@ -127,7 +127,7 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 `status`: *状态：Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
-`last-call-deadline`: *终审截止日期* (可选字段，只在状态为 `Last Call`时需要)。
+`last-call-deadline`: *最后公示期限* (可选字段，只在状态为 `Last Call`时需要)。
 
 `type`: *`Standards Track`, `Meta`或 `Informational`中的一个*。
 

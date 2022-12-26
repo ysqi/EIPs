@@ -4,8 +4,8 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>以太坊EIPs--最后通知</title>
-    <description>所有处于两周“最后通知”状态的EIP，请帮助查看并提供反馈！</description>
+    <title>以太坊EIPs--最后公示</title>
+    <description>所有处于两周“最后公示”状态的EIP，请帮助查看并提供反馈！</description>
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}/last-call.xml" rel="self" type="application/rss+xml" />
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
