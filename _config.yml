@@ -13,60 +13,59 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Ethereum Improvement Proposals
+title: 中文版以太坊改进提案
 description: >-
-  Ethereum Improvement Proposals (EIPs) describe standards for the Ethereum
-  platform, including core protocol specifications, client APIs, and contract
-  standards.
-url: "https://eips.ethereum.org"
-github_username:  ethereum
-repository: ethereum/EIPs
+    以太坊改进提案 (EIPs) 描述了以太坊平台标准，包括核心协议规范、客户端API和合约标准。
+url: "https://ethlib.cn/eips/"
+github_username: ysqi
+repository: ysqi/EIPs
 
 header_pages:
- - all.html
- - core.html
- - networking.html
- - interface.html
- - erc.html
- - meta.html
- - informational.html
+    - all.html
+    - core.html
+    - networking.html
+    - interface.html
+    - erc.html
+    - meta.html
+    - informational.html
 
 # Build settings
 highlighter: rouge
 markdown: kramdown
 theme: minima
 kramdown:
-  parse_block_html: false
-  # This is the default, but be explicit as some EIPs depend on it
-  auto_ids: true
-  # This is to ensure more determistic behaviour
-  auto_id_stripping: true
-  syntax_highlighter: rouge
+    parse_block_html: false
+    # This is the default, but be explicit as some EIPs depend on it
+    auto_ids: true
+    # This is to ensure more determistic behaviour
+    auto_id_stripping: true
+    syntax_highlighter: rouge
 
 permalink: /:slug
 
 defaults:
-  -
-    scope:
-      path: "EIPS"
-    values:
-      layout: "eip"
+    - scope:
+          path: "EIPS-zh-CN"
+      values:
+          layout: "eip"
+          permalink: /EIPS/:basename
 
 exclude:
-  - .github
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - eip-template.md
-  - ISSUE_TEMPLATE.md
-  - PULL_REQUEST_TEMPLATE.md
-  - README.md
-  
+    - .github
+    - Gemfile
+    - Gemfile.lock
+    - node_modules
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/
+    - EIPS/
+    - eip-template.md
+    - ISSUE_TEMPLATE.md
+    - PULL_REQUEST_TEMPLATE.md
+    - README.md
+
 include:
-  - LICENSE
+    - LICENSE
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"

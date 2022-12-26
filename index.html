@@ -1,52 +1,80 @@
 ---
 layout: default
-title: Home
+title: 首页
 ---
 
 <h1 class="page-heading">EIPs
-  <a href="https://discord.io/EthCatHerders"><img src="https://dcbadge.vercel.app/api/server/Nz6rtfJ8Cu?style=flat" alt="Discord channel for ECH eip-editer"></a>
-  <a href="https://discord.gg/EVTQ9crVgQ"><img src="https://dcbadge.vercel.app/api/server/EVTQ9crVgQ?style=flat" alt="Discord channel for Eth R&D eip-editing"></a>
-  <a href="https://discord.gg/mRzPXmmYEA"><img src="https://dcbadge.vercel.app/api/server/mRzPXmmYEA?style=flat" alt="Discord server for discussions about proposals that impact Ethereum wallets"></a>
+  <a href="https://discord.io/EthCatHerders"><img src="https://dcbadge.vercel.app/api/server/Nz6rtfJ8Cu?style=flat"
+      alt="Discord channel for ECH eip-editer"></a>
+  <a href="https://discord.gg/EVTQ9crVgQ"><img src="https://dcbadge.vercel.app/api/server/EVTQ9crVgQ?style=flat"
+      alt="Discord channel for Eth R&D eip-editing"></a>
+  <a href="https://discord.gg/mRzPXmmYEA"><img src="https://dcbadge.vercel.app/api/server/mRzPXmmYEA?style=flat"
+      alt="Discord server for discussions about proposals that impact Ethereum wallets"></a>
   <a href="/last-call.xml"><img src="https://img.shields.io/badge/rss-Last Calls-red.svg" alt="RSS"></a>
 </h1>
-<p>Ethereum Improvement Proposals (EIPs) describe standards for the Ethereum platform, including core protocol specifications, client APIs, and contract standards. Network upgrades are discussed separately in the <a target="_blank" href="https://github.com/ethereum/pm/">Ethereum Project Management</a> repository.</p>
+<p>以太坊改进建议 (EIP) 描述了以太坊平台标准，包括核心协议规范、客户端API和合约标准。网络升级的问题将在 <a target="_blank"
+    href="https://github.com/ethereum/pm/">以太坊项目管理</a> 仓库</p>
 
-<h2>Contributing</h2>
-<p>First review <a href="EIPS/eip-1">EIP-1</a>. Then clone the repository and add your EIP to it. There is a <a href="https://github.com/ethereum/EIPs/blob/master/eip-template.md">template EIP here</a>. Then submit a Pull Request to Ethereum's <a href="https://github.com/ethereum/EIPs">EIPs repository</a>.</p>
+<h2>贡献</h2>
+<p>首先审查 <a href="EIPS-zh-CN/eip-1">EIP-1</a>，然后克隆仓库，将你的 EIP 添加到其中。这里有一个
+  <a href="https://github.com/ethereum/EIPs/blob/master/eip-template.md"> EIP 模板</a>。然后向 Ethereum 的
+  <a href="https://github.com/ethereum/EIPs">EIPs 仓库</a>提交一个 PR 请求。
+</p>
 
-<h2>EIP status terms</h2>
+<h2>EIP状态术语</h2>
 <ul>
-  <li><strong>Idea</strong> - An idea that is pre-draft. This is not tracked within the EIP Repository.
-  <li><strong>Draft</strong> - The first formally tracked stage of an EIP in development. An EIP is merged by an EIP Editor into the EIP repository when properly formatted.</li>
-  <li><strong>Review</strong> - An EIP Author marks an EIP as ready for and requesting Peer Review.</li>
-  <li><strong>Last Call</strong> - This is the final review window for an EIP before moving to FINAL. An EIP editor will assign Last Call status and set a review end date (`last-call-deadline`), typically 14 days later. If this period results in necessary normative changes it will revert the EIP to Review.</li>
-  <li><strong>Final</strong> - This EIP represents the final standard. A Final EIP exists in a state of finality and should only be updated to correct errata and add non-normative clarifications.</li>
-  <li><strong>Stagnant</strong> - Any EIP in Draft or Review if inactive for a period of 6 months or greater is moved to Stagnant. An EIP may be resurrected from this state by Authors or EIP Editors through moving it back to Draft.</li>
-  <li><strong>Withdrawn</strong> - The EIP Author(s) have withdrawn the proposed EIP. This state has finality and can no longer be resurrected using this EIP number. If the idea is pursued at later date it is considered a new proposal.</li>
-  <li><strong>Living</strong> - A special status for EIPs that are designed to be continually updated and not reach a state of finality. This includes most notably EIP-1.</li>
+  <li><strong>想法-Idea</strong> - 一个预先起草的想法， 不在 EIP 资源库中跟踪。
+  <li><strong>草稿-Draft</strong> - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑会将 EIP 合并到 EIP 资源库中。</li>
+  <li><strong>审核-Review</strong> - EIP 作者将 EIP 标记为准备好并请求同行评审。</li>
+  <li><strong>终审-Last Call</strong> - 这是 EIP 进入Final的终审窗口。 EIP编辑将指定 Last Call 状态，并设定审查结束日期 (`Last-call-deadline`)，
+    通常是14天后。如果这段时间产生了必要的规范性修改，它将把 EIP 恢复为 Review。</li>
+  <li><strong>最终-Final</strong> - 该 EIP 代表了最终标准。最终 EIP 是以最终状态存在的，只应在纠正勘误和增加非规范性澄清时进行更新。</li>
+  <li><strong>停滞-Stagnant</strong> - 任何处于DRAFT 或 REVIEW 或 Last Call 状态的EIP， 如果在 6 个月或更长时间内没有活动，将移至 Stagnant。
+    EIP 可由作者或编辑将其移回草案状态。</li>
+  <li><strong>撤回-Withdrawn</strong> - EIP 作者已撤回提案的 EIP。 这种状态具有终结性，不能再使用这个 EIP 编号复活。
+    如果这个想法在以后的日子里被推行，它将被视为一个新的提案。
+  </li>
+  <li><strong>活着-Living</strong> - EIP 的特殊状态，适用于那些旨在持续更新而未达到最终状态的 EIP。 这包括最引入注目的 EIP-1。</li>
 </ul>
 
-<h2>EIP Types</h2>
+<h2>EIP 类型</h2>
 
-<p>EIPs are separated into a number of types, and each has its own list of EIPs.</p>
+<p>EIP 被分成若干类型，每种类型都有自己的 EIP 清单。</p>
 
-<h3>Standard Track ({{site.pages|where:"type","Standards Track"|size}})</h3>
-<p>Describes any change that affects most or all Ethereum implementations, such as a change to the network protocol, a change in block or transaction validity rules, proposed application standards/conventions, or any change or addition that affects the interoperability of applications using Ethereum. Furthermore Standard EIPs can be broken down into the following categories.</p>
+<h3>标准类 ({{site.pages|where:"type","Standards Track"|size}})</h3>
+<p>描述了影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，
+  或影响以太坊应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施、（如果有必要）对 正式规范的更新。
+  此外，标准类 EIP 可细分为：</p>
 
-<h4><a href="{{"core"|relative_url}}">Core</a> ({{site.pages|where:"type","Standards Track"|where:"category","Core"|size}})</h4>
-<p>Improvements requiring a consensus fork (e.g. <a href="./EIPS/eip-5">EIP-5</a>, <a href="./EIPS/eip-211">EIP-211</a>), as well as changes that are not necessarily consensus critical but may be relevant to “core dev” discussions (for example, the PoA algorithm for testnets described in <a href="./EIPS/eip-225">EIP-225</a>).</p>
+<h4><a href="{{" core"|relative_url}}">核心-Core</a> ({{site.pages|where:"type","Standards
+  Track"|where:"category","Core"|size}})</h4>
+<p>需要共识分叉的改进(如 <a href="./EIPS-zh-CN/eip-5">EIP-5</a>, <a href="./EIPS-zh-CN/eip-211">EIP-211</a>,
+  <a href="./EIPS/eip-211">EIP-211</a>), 以及那些或许非共识关键但可能与“核心开发”讨论相关的（如 <a href="./EIPS/eip-225">EIP-225</a>) 中描述的测试网 PoA
+  算法 ）。
+</p>
 
-<h4><a href="{{"networking"|relative_url}}">Networking</a> ({{site.pages|where:"type","Standards Track"|where:"category","Networking"|size}})</h4>
-<p>Includes improvements around devp2p (<a href="./EIPS/eip-8">EIP-8</a>) and Light Ethereum Subprotocol, as well as proposed improvements to network protocol specifications of whisper and swarm.</p>
+<h4><a href="{{"networking"|relative_url}}">网络-Networking</a> ({{site.pages|where:"type","Standards
+  Track"|where:"category","Networking"|size}})</h4>
+<p>包括对 devp2p(<a href="./EIPS/eip-8">EIP-8</a>) 和以太坊轻客户端子协议的改进，
+  以及对 whisper 和 swarm 网络协议规范的改进。</p>
 
-<h4><a href="{{"interface"|relative_url}}">Interface</a> ({{site.pages|where:"type","Standards Track"|where:"category","Interface"|size}})</h4>
-<p>Includes improvements around client API/RPC specifications and standards, and also certain language-level standards like method names (<a href="./EIPS/eip-6">EIP-6</a>) and contract ABIs. The label “interface” aligns with the interfaces repo and discussion should primarily occur in that repository before an EIP is submitted to the EIPs repository.</p>
+<h4><a href="{{"interface"|relative_url}}">接口-Interface</a> ({{site.pages|where:"type","Standards
+  Track"|where:"category","Interface"|size}})</h4>
+<p>包括围绕客户端 API/RPC 规格和标准的改进，还有某些语言级别的标准，如方法名 (<a href="./EIPS/eip-6">EIP-6</a>) 和合约 ABIs。
+  标签“interface”与 interfaces 仓库一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该库中。</p>
 
-<h4><a href="{{"erc"|relative_url}}">ERC</a> ({{site.pages|where:"type","Standards Track"|where:"category","ERC"|size}})</h4>
-<p>Application-level standards and conventions, including contract standards such as token standards (<a href="./EIPS/eip-20">EIP-20</a>), name registries (<a href="./EIPS/eip-137">EIP-137</a>), URI schemes (<a href="./EIPS/eip-681">EIP-681</a>), library/package formats (<a href="./EIPS/eip-190">EIP-190</a>), and account abstraction (<a href="./EIPS/eip-4337">EIP-4337</a>).</p>
+<h4><a href="{{"erc"|relative_url}}">应用-ERC</a> ({{site.pages|where:"type","Standards
+  Track"|where:"category","ERC"|size}})</h4>
+<p>应用层面的标准和约定，包括合约标准，如代币标准 (<a href="./EIPS/eip-20">EIP-20</a>)、
+  名称注册 (<a href="./EIPS/eip-137">EIP-137</a>)、URI 方案 (<a href="./EIPS/eip-681">EIP-681</a>)、
+  库/包格式 (<a href="./EIPS/eip-190">EIP-190</a>)和钱包格式(<a href="./EIPS/eip-4337">EIP-4337</a>)。
 
-<h3><a href="{{"meta"|relative_url}}">Meta</a> ({{site.pages|where:"type","Meta"|size}})</h3>
-<p>Describes a process surrounding Ethereum or proposes a change to (or an event in) a process. Process EIPs are like Standards Track EIPs but apply to areas other than the Ethereum protocol itself. They may propose an implementation, but not to Ethereum's codebase; they often require community consensus; unlike Informational EIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Ethereum development. Any meta-EIP is also considered a Process EIP.</p>
+<h3><a href="{{"meta"|relative_url}}">元-Meta</a> ({{site.pages|where:"type","Meta"|size}})</h3>
+<p>描述了围绕以太坊的一个流程或提出对一个流程的变更（或一个事件）。 流程 EIP 类似于标准类 EIP，但流程 EIP 适用于以太坊协议之外的领域。
+  他们可能会提出一个实施方案，但不会针对以太坊代码库；他们通常需要社区达成共识；与信息类 EIP 不同，它们不仅仅是建议，用户一般不能随意忽略它们。
+  这方面的提案包括程序、指南、决策过程的更改以及以太坊开发中使用的工具或环境的更改。 任何 meta-EIP 也会被视为一个流程 EIP。</p>
 
-<h3><a href="{{"informational"|relative_url}}">Informational</a> ({{site.pages|where:"type","Informational"|size}})</h3>
-<p>Describes a Ethereum design issue, or provides general guidelines or information to the Ethereum community, but does not propose a new feature. Informational EIPs do not necessarily represent Ethereum community consensus or a recommendation, so users and implementers are free to ignore Informational EIPs or follow their advice.</p>
+<h3><a href="{{" informational"|relative_url}}">信息类-Informational</a> ({{site.pages|where:"type","Informational"|size}})
+</h3>
+<p> 描述以太坊的设计问题，或向以太坊社区提供一般的指南或资讯，而非提出新功能。
+  它不一定代表以太坊社区的共识或建议，所以用户和实施者可以自由的选择遵循或忽略信息类 EIP 所提出的建议。</p>
