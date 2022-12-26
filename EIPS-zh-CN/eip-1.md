@@ -268,6 +268,33 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 
 这是个带有脚注的句子。[^1]
 
+[^1]:
+    ```csl-json
+    {
+      "type": "article",
+      "id": 1,
+      "author": [
+        {
+          "family": "Jameson",
+          "given": "Hudson"
+        }
+      ],
+      "DOI": "00.0000/a00000-000-0000-y",
+      "title": "An Interesting Article",
+      "original-date": {
+        "date-parts": [
+          [2022, 12, 31]
+        ]
+      },
+      "URL": "https://sly-hub.invalid/00.0000/a00000-000-0000-y",
+      "custom": {
+        "additional-urls": [
+          "https://example.com/an-interesting-article.pdf"
+        ]
+      }
+    }
+    ```
+
 关于支持的字段，请参见[引用文献样式语言模式](https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json)。 除了通过对该模式的验证外，参考文献必须包括 DOI 和至少一个 URL。
 
 顶层的 URL 字段必须解析到一个可以零成本查看参考文献的副本。 `additional-urls`下的值也必须解析到参考文献的副本，但可能会收取费用。
@@ -361,29 +388,3 @@ EIP 一旦准备就绪，EIP 编辑将：
 ## 版权
 
 通过 [CC0](../LICENSE.md) 放弃版权和相关权利。
-[^1]:
-    ```csl-json
-    {
-      "type": "article",
-      "id": 1,
-      "author": [
-        {
-          "family": "Jameson",
-          "given": "Hudson"
-        }
-      ],
-      "DOI": "00.0000/a00000-000-0000-y",
-      "title": "An Interesting Article",
-      "original-date": {
-        "date-parts": [
-          [2022, 12, 31]
-        ]
-      },
-      "URL": "https://sly-hub.invalid/00.0000/a00000-000-0000-y",
-      "custom": {
-        "additional-urls": [
-          "https://example.com/an-interesting-article.pdf"
-        ]
-      }
-    }
-    ```
