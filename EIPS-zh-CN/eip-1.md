@@ -21,7 +21,7 @@ EIP 是指以太坊改进提案（Ethereum Improvement Proposal ）。 EIP 是�
 
 EIP 有 3 种类型：
 
-- **标准类 EIP (Standards Track EIP)** 描述了影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施、（如果有必要）对 [正式规范](https://github.com/ethereum/yellowpaper)的更新。 此外，标准类 EIP 可分为以下几类：
+- **标准类 EIP (Standards Track EIP)** 描述了影响多数或全部以太坊实现的任何更改，例如网络协议的更改、块或交易有效性规则的更改、提议的应用程序标准/约定，或影响以太坊应用程序交互的任何更改或添加。 标准类 EIP 由三部分组成 - 设计文档、实施、（如果有必要）对 [正式规范](https://github.com/ethereum/yellowpaper)的更新。 此外，标准类 EIP 可细分为：
   - **核心 Core**: 需要共识分叉的改进(如 [EIP-5](./eip-5.md), [EIP-101](./eip-101.md)), 以及那些或许非共识关键但可能与 [“核心开发”讨论相关的变化](https://github.com/ethereum/pm)（如 [EIP-90]，矿工/节点策略更改[EIP-86](./eip-86.md)的2、3和4)。
   - **网络 Networking**: 包括对[devp2p](https://github.com/ethereum/devp2p/blob/readme-spec-links/rlpx.md) ([EIP-8](./eip-8.md)) 和[以太坊轻客户端子协议](https://ethereum.org/en/developers/docs/nodes-and-clients/#light-node)的改进，以及对[whisper](https://github.com/ethereum/go-ethereum/issues/16013#issuecomment-364639309)和[swarm](https://github.com/ethereum/go-ethereum/pull/2959)网络协议规范的改进。
   - **接口 Interface**: 包括围绕客户端 [API/RPC](https://github.com/ethereum/execution-apis#README) 规格和标准的改进，还有某些语言级别的标准，如方法名 ([EIP-6](./eip-6.md)) 和 [合约 ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html)。 标签“interface”与 [interfaces repo] 一致，在将 EIP 提交到 EIP 存储库之前，讨论应该主要发生在该库中。
@@ -79,7 +79,7 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 **评审-Review** - EIP 作者将 EIP 标记为准备好并请求同行评审。
 
-**终审- Last Call** - 这是 EIP 进入`Final`的终审窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
+**最后通知- Last Call** - 这是 EIP 进入`Final`的终审窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
 
 如果这段时间产生了必要的规范性修改，它将把 EIP 恢复为 `Review`。
 
