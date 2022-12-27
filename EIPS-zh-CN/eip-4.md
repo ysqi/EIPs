@@ -32,7 +32,7 @@ Standards EIPs are placed in one of four layers:
 
 # 1. 1. Consensus Layer
 
-The consensus layer defines cryptographic commitment structures. The consensus layer defines cryptographic commitment structures. Its purpose is ensuring that anyone can locally evaluate whether a particular state and history is valid, providing settlement guarantees, and assuring eventual convergence.
+The consensus layer defines cryptographic commitment structures. The consensus layer defines cryptographic commitment structures. Its purpose is ensuring that anyone can locally evaluate whether a particular state and history is valid, providing settlement guarantees, and assuring eventual convergence. The consensus layer defines cryptographic commitment structures. Its purpose is ensuring that anyone can locally evaluate whether a particular state and history is valid, providing settlement guarantees, and assuring eventual convergence.
 
 The consensus layer is not concerned with how messages are propagated on a network.
 
@@ -48,7 +48,7 @@ In a hard fork, structures that were invalid under the old rules become valid un
 
 # 2. 2. Networking Layer
 
-The networking layer specifies the Ethereum wire protocol (eth) and the Light Ethereum Subprotocol (les).  RLPx is excluded and tracked in the [https://github.com/ethereum/devp2p devp2p repository].  RLPx is excluded and tracked in the [https://github.com/ethereum/devp2p devp2p repository].
+The networking layer specifies the Ethereum wire protocol (eth) and the Light Ethereum Subprotocol (les).  RLPx is excluded and tracked in the [https://github.com/ethereum/devp2p devp2p repository].  The networking layer specifies the Ethereum wire protocol (eth) and the Light Ethereum Subprotocol (les).  RLPx is excluded and tracked in the [https://github.com/ethereum/devp2p devp2p repository].  RLPx is excluded and tracked in the [https://github.com/ethereum/devp2p devp2p repository].
 
 Only a subset of subprotocols are required for basic node interoperability. Nodes can support further optional extensions. Nodes can support further optional extensions.
 
@@ -57,7 +57,7 @@ It is always possible to add new subprotocols without breaking compatibility wit
 
 # 3. 3. API/RPC Layer
 
-The API/RPC layer specifies higher level calls accessible to applications. The API/RPC layer specifies higher level calls accessible to applications. Support for these EIPs is not required for basic network interoperability but might be expected by some client applications.
+The API/RPC layer specifies higher level calls accessible to applications. The API/RPC layer specifies higher level calls accessible to applications. Support for these EIPs is not required for basic network interoperability but might be expected by some client applications. The API/RPC layer specifies higher level calls accessible to applications. Support for these EIPs is not required for basic network interoperability but might be expected by some client applications.
 
 There's room at this layer to allow for competing standards without breaking basic network interoperability.
 
