@@ -2,13 +2,13 @@
 eip: 86
 title: Abstraction of transaction origin and signature
 author: Vitalik Buterin (@vbuterin)
-type: Standards Track
-category: Core
-status: Stagnant
+type: 标准跟踪
+category: 核心
+status: 停滞
 created: 2017-02-10
 ---
 
-# Summary
+# 摘要
 
 Implements a set of changes that serve the combined purpose of "abstracting out" signature verification and nonce checking, allowing users to create "account contracts" that perform any desired signature/nonce checks instead of using the mechanism that is currently hard-coded into transaction processing.
 
@@ -18,7 +18,7 @@ Implements a set of changes that serve the combined purpose of "abstracting out"
 * CHAIN_ID: same as used for EIP 155 (ie. 1 for mainnet, 3 for testnet)
 * NULL_SENDER: 2**160 - 1
 
-# Specification
+# 规范
 
 If `block.number >= METROPOLIS_FORK_BLKNUM`, then:
 1. If the signature of a transaction is `(CHAIN_ID, 0, 0)` (ie. `r = s = 0`, `v = CHAIN_ID`), then treat it as valid and set the sender address to `NULL_SENDER`
@@ -26,7 +26,7 @@ If `block.number >= METROPOLIS_FORK_BLKNUM`, then:
 3. Create a new opcode at `0xfb`, `CREATE2`, with 4 stack arguments (value, salt, mem_start, mem_size) which sets the creation address to `sha3(sender + salt + sha3(init code)) % 2**160`, where `salt` is always represented as a 32-byte value.
 4. Add to _all_ contract creation operations, including transactions and opcodes, the rule that if a contract at that address already exists and has non-empty code OR non-empty nonce, the operation fails and returns 0 as if the init code had run out of gas. If an account has empty code and nonce but nonempty balance, the creation operation may still succeed. If an account has empty code and nonce but nonempty balance, the creation operation may still succeed.
 
-# Rationale
+# 基本原理
 
 The goal of these changes is to set the stage for abstraction of account security. The goal of these changes is to set the stage for abstraction of account security. Instead of having an in-protocol mechanism where ECDSA and the default nonce scheme are enshrined as the only "standard" way to secure an account, we take initial steps toward a model where in the long term all accounts are contracts, contracts can pay for gas, and users are free to define their own security model.
 
@@ -93,6 +93,6 @@ If all five checks pass, relay and/or mine the transaction.
 
 A looser but still effective strategy would be to accept any code that fits the same general format as the above, consuming only a limited amount of gas to perform nonce and signature checks and having a guarantee that transaction fees will be paid to the miner. Another strategy is to, alongside other approaches, try to process any transaction that asks for less than 250,000 gas, and include it only if the miner's balance is appropriately higher after executing the transaction than before it. Another strategy is to, alongside other approaches, try to process any transaction that asks for less than 250,000 gas, and include it only if the miner's balance is appropriately higher after executing the transaction than before it.
 
-# Copyright
+# 版权声明
 
 Copyright and related rights waived via CC0.
