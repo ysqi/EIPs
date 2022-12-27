@@ -45,7 +45,7 @@ Other data could be added, but ideally the client should take them from elsewher
 
 ### Example 1
 
-Clicking this link would open a transaction that would try to send _5 unicorns_ to address _deadbeef_. The user would then simply approve, based on each wallet UI. The user would then simply approve, based on each wallet UI.
+Clicking this link would open a transaction that would try to send _5 unicorns_ to address _deadbeef_. The user would then simply approve, based on each wallet UI. The user would then simply approve, based on each wallet UI. The user would then simply approve, based on each wallet UI.
 
 ```
  ethereum:0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7?gas=100000&data=0xa9059cbb00000000000000000000000000000000000000000000000000000000deadbeef0000000000000000000000000000000000000000000000000000000000000005
