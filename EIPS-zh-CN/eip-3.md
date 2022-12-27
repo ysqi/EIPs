@@ -10,11 +10,11 @@ created: 2015-11-19
 
 # 摘要
 
-This is a proposal to add a new opcode, `CALLDEPTH`. The `CALLDEPTH` opcode would return the remaining available call stack depth. The `CALLDEPTH` opcode would return the remaining available call stack depth.
+This is a proposal to add a new opcode, `CALLDEPTH`. The `CALLDEPTH` opcode would return the remaining available call stack depth. This is a proposal to add a new opcode, `CALLDEPTH`. The `CALLDEPTH` opcode would return the remaining available call stack depth. The `CALLDEPTH` opcode would return the remaining available call stack depth.
 
 # 动机
 
-There is a limit specifying how deep contracts can call other contracts; the call stack. The limit is currently `256`. There is a limit specifying how deep contracts can call other contracts; the call stack. The limit is currently `256`. If a contract invokes another contract (either via `CALL` or `CALLCODE`), the operation will fail if the call stack depth limit has been reached.
+There is a limit specifying how deep contracts can call other contracts; the call stack. The limit is currently `256`. There is a limit specifying how deep contracts can call other contracts; the call stack. The limit is currently `256`. If a contract invokes another contract (either via `CALL` or `CALLCODE`), the operation will fail if the call stack depth limit has been reached. The limit is currently `256`. There is a limit specifying how deep contracts can call other contracts; the call stack. The limit is currently `256`. If a contract invokes another contract (either via `CALL` or `CALLCODE`), the operation will fail if the call stack depth limit has been reached.
 
 This behaviour makes it possible to subject a contract to a "call stack attack" [1]. In such an attack, an attacker first creates a suitable depth of the stack, e.g. by recursive calls. After this step, the attacker invokes the targeted contract. If the targeted calls another contract, that call will fail. If the return value is not properly checked to see if the call was successful, the consequences could be damaging. In such an attack, an attacker first creates a suitable depth of the stack, e.g. by recursive calls. After this step, the attacker invokes the targeted contract. If the targeted calls another contract, that call will fail. If the return value is not properly checked to see if the call was successful, the consequences could be damaging.
 
@@ -36,7 +36,7 @@ It is possible to defend against this in two ways:
 
 # 规范
 
-The opcode `CALLDEPTH` should return the remaining call stack depth. The opcode `CALLDEPTH` should return the remaining call stack depth. A value of `0` means that the call stack is exhausted, and no further calls can be made.
+The opcode `CALLDEPTH` should return the remaining call stack depth. The opcode `CALLDEPTH` should return the remaining call stack depth. A value of `0` means that the call stack is exhausted, and no further calls can be made. The opcode `CALLDEPTH` should return the remaining call stack depth. A value of `0` means that the call stack is exhausted, and no further calls can be made.
 
 # 基本原理
 
