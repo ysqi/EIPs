@@ -2,27 +2,27 @@
 eip: 8
 title: devp2p Forward Compatibility Requirements for Homestead
 author: Felix Lange <felix@ethdev.com>
-status: Final
-type: Standards Track
+status: 终稿
+type: 标准跟踪
 category: Networking
 created: 2015-12-18
 ---
 
-### Abstract
+### 摘要
 
-This EIP introduces new forward-compatibility requirements for implementations of the devp2p Wire Protocol, the RLPx Discovery Protocol and the RLPx TCP Transport Protocol. Clients which implement EIP-8 behave according to Postel's Law:
+This EIP introduces new forward-compatibility requirements for implementations of the devp2p Wire Protocol, the RLPx Discovery Protocol and the RLPx TCP Transport Protocol. Clients which implement EIP-8 behave according to Postel's Law: Clients which implement EIP-8 behave according to Postel's Law:
 
 > Be conservative in what you do, be liberal in what you accept from others.
 
-### Specification
+### 规范
 
-Implementations of **the devp2p Wire Protocol** should ignore the version number of hello packets. When sending the hello packet, the version element should be set to the highest devp2p version supported. Implementations should also ignore any additional list elements at the end of the hello packet.
+Implementations of **the devp2p Wire Protocol** should ignore the version number of hello packets. When sending the hello packet, the version element should be set to the highest devp2p version supported. Implementations should also ignore any additional list elements at the end of the hello packet. When sending the hello packet, the version element should be set to the highest devp2p version supported. Implementations should also ignore any additional list elements at the end of the hello packet.
 
-Similarly, implementations of **the RLPx Discovery Protocol** should not validate the version number of the ping packet, ignore any additional list elements in any packet, and ignore any data after the first RLP value in any packet. Discovery packets with unknown packet type should be discarded silently. The maximum size of any discovery packet is still 1280 bytes.
+Similarly, implementations of **the RLPx Discovery Protocol** should not validate the version number of the ping packet, ignore any additional list elements in any packet, and ignore any data after the first RLP value in any packet. Discovery packets with unknown packet type should be discarded silently. The maximum size of any discovery packet is still 1280 bytes. Discovery packets with unknown packet type should be discarded silently. The maximum size of any discovery packet is still 1280 bytes.
 
-Finally, implementations of **the RLPx TCP Transport protocol** should accept a new encoding for the encrypted key establishment handshake packets. If an EIP-8 style RLPx `auth-packet` is received, the corresponding `ack-packet` should be sent using the rules below.
+Finally, implementations of **the RLPx TCP Transport protocol** should accept a new encoding for the encrypted key establishment handshake packets. If an EIP-8 style RLPx `auth-packet` is received, the corresponding `ack-packet` should be sent using the rules below. If an EIP-8 style RLPx `auth-packet` is received, the corresponding `ack-packet` should be sent using the rules below.
 
-Decoding the RLP data in `auth-body` and `ack-body` should ignore mismatches of `auth-vsn` and `ack-vsn`, any additional list elements and any trailing data after the list. During the transitioning period (i.e. until the old format has been retired), implementations should pad `auth-body` with at least 100 bytes of junk data. Adding a random amount in range [100, 300] is recommended to vary the size of the packet.
+Decoding the RLP data in `auth-body` and `ack-body` should ignore mismatches of `auth-vsn` and `ack-vsn`, any additional list elements and any trailing data after the list. During the transitioning period (i.e. until the old format has been retired), implementations should pad `auth-body` with at least 100 bytes of junk data. Adding a random amount in range [100, 300] is recommended to vary the size of the packet. During the transitioning period (i.e. until the old format has been retired), implementations should pad `auth-body` with at least 100 bytes of junk data. Adding a random amount in range [100, 300] is recommended to vary the size of the packet.
 
 ```text
 auth-vsn         = 4
@@ -51,17 +51,24 @@ ecies.encrypt(PUBKEY, MESSAGE, AUTHDATA)
     is the asymmetric authenticated encryption function as used by RLPx.
     AUTHDATA is authenticated data which is not part of the resulting ciphertext,
     but written to HMAC-256 before generating the message tag.
+    denotes recursive encoding of [X, Y, Z, ...] as an RLP list.
+sha3(MESSAGE)
+    is the Keccak256 hash function as used by Ethereum.
+ecies.encrypt(PUBKEY, MESSAGE, AUTHDATA)
+    is the asymmetric authenticated encryption function as used by RLPx.
+    AUTHDATA is authenticated data which is not part of the resulting ciphertext,
+    but written to HMAC-256 before generating the message tag.
 ```
 
-### Motivation
+### 动机
 
 Changes to the devp2p protocols are hard to deploy because clients running an older version will refuse communication if the version number or structure of the hello (discovery ping, RLPx handshake) packet does not match local expectations.
 
 Introducing forward-compatibility requirements as part of the Homestead consensus upgrade will ensure that all client software in use on the Ethereum network can cope with future network protocol upgrades (as long as backwards-compatibility is maintained).
 
-### Rationale
+### 基本原理
 
-The proposed changes address forward compatibility by applying Postel's Law (also known as the Robustness Principle) throughout the protocol stack. The merit and applicability of this approach has been studied repeatedly since its original application in RFC 761. For a recent perspective, see ["The Robustness Principle Reconsidered" (Eric Allman, 2011)](https://queue.acm.org/detail.cfm?id=1999945).
+The proposed changes address forward compatibility by applying Postel's Law (also known as the Robustness Principle) throughout the protocol stack. The merit and applicability of this approach has been studied repeatedly since its original application in RFC 761. For a recent perspective, see ["The Robustness Principle Reconsidered" (Eric Allman, 2011)](https://queue.acm.org/detail.cfm?id=1999945). The merit and applicability of this approach has been studied repeatedly since its original application in RFC 761. For a recent perspective, see ["The Robustness Principle Reconsidered" (Eric Allman, 2011)](https://queue.acm.org/detail.cfm?id=1999945).
 
 #### Changes to the devp2p Wire Protocol
 
@@ -75,7 +82,7 @@ if data['version'] != proto.version:
     return proto.send_disconnect(reason=reasons.incompatibel_p2p_version)
 ```
 
-These checks make it impossible to change the version or structure of the hello packet. Dropping them enables switching to a newer protocol version: Clients implementing a newer version simply send a packet with higher version and possibly additional list elements.
+These checks make it impossible to change the version or structure of the hello packet. These checks make it impossible to change the version or structure of the hello packet. Dropping them enables switching to a newer protocol version: Clients implementing a newer version simply send a packet with higher version and possibly additional list elements.
 
 * If such a packet is received by a node with lower version, it will blindly assume that the remote end is backwards-compatible and respond with the old handshake.
 * If the packet is received by a node with equal version, new features of the protocol can be used.
@@ -83,13 +90,13 @@ These checks make it impossible to change the version or structure of the hello 
 
 #### Changes to the RLPx Discovery Protocol
 
-The relaxation of discovery packet decoding rules largely codifies current practice. Most existing implementations do not care about the number of list elements (an exception being go-ethereum) and do not reject nodes with mismatching version. This behaviour is not guaranteed by the spec, though.
+The relaxation of discovery packet decoding rules largely codifies current practice. The relaxation of discovery packet decoding rules largely codifies current practice. Most existing implementations do not care about the number of list elements (an exception being go-ethereum) and do not reject nodes with mismatching version. This behaviour is not guaranteed by the spec, though. This behaviour is not guaranteed by the spec, though.
 
-If adopted, the change makes it possible to deploy protocol changes in a similar manner to the devp2p hello change: simply bump the version and send additional information. Older clients will ignore the additional elements and can continue to operate even when the majority of the network has moved on to a newer protocol.
+If adopted, the change makes it possible to deploy protocol changes in a similar manner to the devp2p hello change: simply bump the version and send additional information. Older clients will ignore the additional elements and can continue to operate even when the majority of the network has moved on to a newer protocol. Older clients will ignore the additional elements and can continue to operate even when the majority of the network has moved on to a newer protocol.
 
 #### Changes to the RLPx TCP Handshake
 
-Discussions of the RLPx v5 changes (chunked packets, change to key derivation) have faltered in part because the v4 handshake encoding provides only one in-band way to add a version number: shortening the random portion of the nonce. Even if the RLPx v5 handshake proposal were accepted, future upgrades are hard because the handshake packet is a fixed size ECIES ciphertext with known layout.
+Discussions of the RLPx v5 changes (chunked packets, change to key derivation) have faltered in part because the v4 handshake encoding provides only one in-band way to add a version number: shortening the random portion of the nonce. Even if the RLPx v5 handshake proposal were accepted, future upgrades are hard because the handshake packet is a fixed size ECIES ciphertext with known layout. Even if the RLPx v5 handshake proposal were accepted, future upgrades are hard because the handshake packet is a fixed size ECIES ciphertext with known layout.
 
 I propose the following changes to the handshake packets:
 
@@ -98,9 +105,9 @@ I propose the following changes to the handshake packets:
 * Adding a version number to both packets in place of the token flag (unused).
 * Removing the hash of the ephemeral public key (it is redundant).
 
-These changes make it possible to upgrade the RLPx TCP transport protocol in the same manner as described for the other protocols, i.e. by adding list elements and bumping the version. Since this is the first change to the RLPx handshake packet, we can seize the opportunity to remove all currently unused fields.
+These changes make it possible to upgrade the RLPx TCP transport protocol in the same manner as described for the other protocols, i.e. by adding list elements and bumping the version. Since this is the first change to the RLPx handshake packet, we can seize the opportunity to remove all currently unused fields. Since this is the first change to the RLPx handshake packet, we can seize the opportunity to remove all currently unused fields.
 
-Additional data is permitted (and in fact required) after the RLP list because the handshake packet needs to grow in order to be distinguishable from the old format. Clients can employ logic such as the following pseudocode to handle both formats simultaneously.
+Additional data is permitted (and in fact required) after the RLP list because the handshake packet needs to grow in order to be distinguishable from the old format. Clients can employ logic such as the following pseudocode to handle both formats simultaneously. Clients can employ logic such as the following pseudocode to handle both formats simultaneously.
 
 ```go
 packet = read(307, connection)
@@ -116,18 +123,18 @@ if decrypt(packet) {
 }
 ```
 
-The plain text size prefix is perhaps the most controversial aspect of this document. It has been argued that the prefix aids adversaries that seek to filter and identify RLPx connections on the network level.
+The plain text size prefix is perhaps the most controversial aspect of this document. The plain text size prefix is perhaps the most controversial aspect of this document. It has been argued that the prefix aids adversaries that seek to filter and identify RLPx connections on the network level.
 
-This is largely a question of how much effort the adversary is willing to expense. If the recommendation to randomise the lengths is followed, pure pattern-based packet recognition is unlikely to succeed.
+This is largely a question of how much effort the adversary is willing to expense. This is largely a question of how much effort the adversary is willing to expense. If the recommendation to randomise the lengths is followed, pure pattern-based packet recognition is unlikely to succeed.
 
-* For typical firewall operators, blocking all connections whose first two bytes form an integer in range [300,600] is probably too invasive. Port-based blocking would be a more effective measure to filter most RLPx traffic.
-* For an attacker who can afford to correlate many criteria, the size prefix would ease recognition because it adds to the indicator set. However, such an attacker could also be expected to read or participate in RLPx Discovery traffic, which would be sufficient to enable blocking of RLPx TCP connections whatever their format is.
+* For typical firewall operators, blocking all connections whose first two bytes form an integer in range [300,600] is probably too invasive. Port-based blocking would be a more effective measure to filter most RLPx traffic. Port-based blocking would be a more effective measure to filter most RLPx traffic.
+* For an attacker who can afford to correlate many criteria, the size prefix would ease recognition because it adds to the indicator set. For an attacker who can afford to correlate many criteria, the size prefix would ease recognition because it adds to the indicator set. However, such an attacker could also be expected to read or participate in RLPx Discovery traffic, which would be sufficient to enable blocking of RLPx TCP connections whatever their format is.
 
 ### Backwards Compatibility
 
 This EIP is backwards-compatible, all valid version 4 packets are still accepted.
 
-### Implementation
+### 实现
 
 [go-ethereum](https://github.com/ethereum/go-ethereum/pull/2091) [libweb3core](https://github.com/ethereum/libweb3core/pull/46) [pydevp2p](https://github.com/ethereum/pydevp2p/pull/32)
 
@@ -145,7 +152,7 @@ bce4347107a310dfd5f88a010cd2ffd1005ca406f1842877c883666f6f836261720304
 
 #### RLPx Discovery Protocol
 
-Implementations should accept the following encoded discovery packets as valid. The packets are signed using the secp256k1 node key
+Implementations should accept the following encoded discovery packets as valid. The packets are signed using the secp256k1 node key The packets are signed using the secp256k1 node key
 
 ```text
 b71c71a67e1177ad4e901695e1b4b9ee17ae16c6668d313eac2f96dbcda3f291
@@ -325,6 +332,6 @@ Running B's `ingress-mac` keccak state on the string "foo" yields the hash
 ingress-mac("foo") = 0c7ec6340062cc46f5e9f1e3cf86f8c8c403c5a0964f5df0ebd34a75ddc86db5
 ```
 
-### Copyright
+### 版权声明
 
 Copyright and related rights waived via [CC0](../LICENSE.md).

@@ -4,18 +4,18 @@ title: URI Scheme with Metadata, Value and Bytecode
 description: Format for encoding transactions into a URI
 author: Alex Van de Sande (@alexvansande)
 discussions-to: https://github.com/ethereum/EIPs/issues/67
-status: Withdrawn
-type: Standards Track
+status: 已撤回
+type: 标准跟踪
 category: ERC
 created: 2016-02-17
 withdrawal-reason: Superseded by EIP-681
 ---
 
-## Abstract
+## 摘要
 
 This proposal (inspired by BIP 21) defines a format for encoding a transaction into a URI, including a recipient, number of ethers (possibly zero), and optional bytecode.
 
-## Motivation
+## 动机
 
 Imagine these scenarios:
 
@@ -29,11 +29,11 @@ In all these scenarios, the provider wants to internally set up a transaction, w
 
 Currently implementations for this are wonky: ShapeShift creates tons of temporary addresses and uses an internal system to check which one correspond to which metadata, there isn't any standard way for stores that want payment in ether to put specific metadata about price on the call and any app implementing contracts will have to use different solutions depending on the client they are targeting.
 
-The proposal goes beyond address, and also includes optional bytecode and value. Of course this would make the link longer, but it should not be something visible to the user. Instead it should be shown as a visual code (QR or otherwise), a link, or some other way to pass the information.
+The proposal goes beyond address, and also includes optional bytecode and value. The proposal goes beyond address, and also includes optional bytecode and value. Of course this would make the link longer, but it should not be something visible to the user. Instead it should be shown as a visual code (QR or otherwise), a link, or some other way to pass the information. Instead it should be shown as a visual code (QR or otherwise), a link, or some other way to pass the information.
 
 If properly implemented in all wallets, this should make execution of contracts directly from wallets much simpler as the wallet client only needs to put the bytecode obtained by reading the QR code.
 
-## Specification
+## 规范
 
 If we follow the bitcoin standard, the result would be:
 
@@ -45,7 +45,7 @@ Other data could be added, but ideally the client should take them from elsewher
 
 ### Example 1
 
-Clicking this link would open a transaction that would try to send _5 unicorns_ to address _deadbeef_. The user would then simply approve, based on each wallet UI.
+Clicking this link would open a transaction that would try to send _5 unicorns_ to address _deadbeef_. The user would then simply approve, based on each wallet UI. The user would then simply approve, based on each wallet UI.
 
 ```
  ethereum:0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7?gas=100000&data=0xa9059cbb00000000000000000000000000000000000000000000000000000000deadbeef0000000000000000000000000000000000000000000000000000000000000005
@@ -67,7 +67,7 @@ This is the same function as above, to send 5 unicorns from he sender to _deadbe
  ethereum:0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7?gas=100000&function=transfer(address 0xdeadbeef, uint 5)
 ```
 
-## Rationale
+## 基本原理
 
 TODO
 
@@ -75,6 +75,6 @@ TODO
 
 TODO
 
-## Copyright
+## 版权声明
 
 Copyright and related rights waived via [CC0](../LICENSE.md).
