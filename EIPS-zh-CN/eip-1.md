@@ -73,24 +73,24 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 ![EIP 状态图](../assets/eip-1/EIP-process-update.jpg)
 
-**想法-Idea** - 一个预先起草的想法， 不在 EIP 资源库中跟踪。 不在 EIP 资源库中跟踪。
+**想法-Idea** - 一个预先起草的想法， 不在 EIP 资源库中跟踪。
 
-**草案-Draft** - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑会将 EIP 合并到 EIP 仓库中。
+**草稿-Draft** - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑会将 EIP 合并到 EIP 仓库中。
 
 **评审-Review** - EIP 作者将 EIP 标记为准备好并请求同行评审。
 
-**最后公示- Last Call** - 这是 EIP 进入`Final`的最后公示窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
+**最后通知- Last Call** - 这是 EIP 进入`Final`的终审窗口。 EIP编辑将指定 `Last Call` 状态，并设定审查结束日期 (`Last-call-deadline`)，通常是14天后。
 
 如果这段时间产生了必要的规范性修改，它将把 EIP 恢复为 `Review`。
 
-**终版-Final** - 该 EIP 代表了最终标准。 终版 EIP 是以最终状态存在的，只应在纠正勘误和增加非规范性澄清时进行更新。
+**最终-Final** - 该 EIP 代表了最终标准。 最终 EIP 是以最终状态存在的，只应在纠正勘误和增加非规范性澄清时进行更新。
 
 **停滞-Stagnant** - 任何处于`DRAFT` 或 `REVIEW` 或 `Last Call` 状态的EIP， 如果在 6 个月或更长时间内没有活动，将移至 `Stagnant`。 EIP 可由作者或编辑通过将其移回`草案`或早期状态，将其从停滞中复活。 如果不复活，一个提案可能会永远停留在这个状态。
 > *EIP作者会被通知其 EIP 状态的任何算法变化。*
 
 **撤回-Withdrawn** - EIP 作者已撤回提案的 EIP。 这种状态具有终结性，不能再使用这个 EIP 编号复活。 如果这个想法在以后的日子里被推行，它将被视为一个新的提案。
 
-**活的-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到终版状态的 EIP。 这包括最引入注目的 EIP-1。
+**活着-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到最终状态的 EIP。 这包括最引入注目的 EIP-1。
 
 ## 一个成功的 EIP 应该包括什么?
 
@@ -104,8 +104,8 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 - 向后兼容 Backwards Compatibility*（可选）* - 所有引入向后不兼容的 EIP 必须包括一个描述这些不兼容及其后果的部分。 EIP 必须解释作者建议如何处理这些不兼容的问题。 如果提案没有引入任何向后不兼容的问题，这部分可以省略，但如果存在向后不兼容的问题，这部分必须包括。
 - 测试案例 Test Cases*（可选）* - 对于影响共识变化的 EIP 来说，实施的测试案例是强制性的。 测试应该作为数据内联在 EIP 中(如输入/期望输出对，或者包含在`../assets/eip-###/<filename>`中）。 对于非核心提案，这一部分可以省略。
 - 参考实现 Refrence Implementation*（可选）* - 这是一个可选的部分，包含人们可以用来帮助理解或实现本规范的参考/示例实现。 所有 EIP 都可以省略这部分。
-- 安全考虑 Security Considerations - 所有的 EIP 都必须包含一个讨论与提议的更改相关的安全影响/考虑因素的部分。 包括对安全讨论可能很重要的信息、表面风险以及可在提案的整个生命周期内使用的信息。 例如， 例如， 包括与安全相关的设计决定、关注点、重要的讨论、特定的实施指导和陷阱、威胁和风险的概要以及如何解决这些问题。 缺少 "安全考虑因素 "部分的 EIP 提交将被拒绝。 如果没有评审人员认为有足够的安全考虑因素讨论，EIP不能进入 "终版 "状态。
-- 版权豁免 Copyright Waiver - 所有的 EIP 必须是在公共领域。 版权放弃必须 MUST 链接到许可证文件并使用以下措辞。 `Copyright and related rights waived via [CC0](.../LICENSE.md)`（译：通过 CC0 放弃版权和相关权利）。
+- 安全考虑 Security Considerations - 所有的 EIP 都必须包含一个讨论与提议的更改相关的安全影响/考虑因素的部分。 包括对安全讨论可能很重要的信息、表面风险以及可在提案的整个生命周期内使用的信息。 例如， 包括与安全相关的设计决定、关注点、重要的讨论、特定的实施指导和陷阱、威胁和风险的概要以及如何解决这些问题。 缺少 "安全考虑因素 "部分的 EIP 提交将被拒绝。 如果没有评审人员认为有足够的安全考虑因素讨论，EIP不能进入 "最终 "状态。
+- 版权豁免 Copyright Waiver - 所有的 EIP 必须是在公共领域。 版权放弃必须 MUST 链接到许可证文件并使用以下措辞。`Copyright and related rights waived via [CC0](.../LICENSE.md)`（译：通过 CC0 放弃版权和相关权利）。
 
 ## EIP 格式与模板
 
@@ -127,7 +127,7 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 `status`: *状态：Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
-`last-call-deadline`: *最后公示期限* (可选字段，只在状态为 `Last Call`时需要)。
+`last-call-deadline`: *终审截止日期* (可选字段，只在状态为 `Last Call`时需要)。
 
 `type`: *`Standards Track`, `Meta`或 `Informational`中的一个*。
 
@@ -137,7 +137,7 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 `* requires:` *（依赖的）EIP 编号(可选字段)*
 
-`withdrawal-reason`: *一句话解释 EIP 被撤销的原因。 * （可选字段，仅在状态为`Withdrawn`时需要）
+`withdrawal-reason`: *一句话解释 EIP 被撤销的原因。* （可选字段，仅在状态为`Withdrawn`时需要）
 
 头部可能有的列表必须用逗号分隔元素。
 
@@ -234,7 +234,7 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 符合数字对象标识符 (DOI) 条件的链接可以使用以下语法：
 
 ````markdown
-这是个带有脚注的句子。 [^1]
+这是个带有脚注的句子。[^1]
 
 [^1]:
     ```csl-json
@@ -263,39 +263,24 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
     }
     ```
 ````
-渲染到:
-这是个带有脚注的句子。 [^1]
-
+渲染到: 这是个带有脚注的句子。[^1]
 关于支持的字段，请参见[引用文献样式语言模式](https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json)。 除了通过对该模式的验证外，参考文献必须包括 DOI 和至少一个 URL。
-
 顶层的 URL 字段必须解析到一个可以零成本查看参考文献的副本。 `additional-urls`下的值也必须解析到参考文献的副本，但可能会收取费用。
-
 ## 关联到其他 EIP
-
 对其他 EIP 的引用应遵循 `EIP-N` 格式，其中 `N` 是您所引用的 EIP 编号。  在 EIP 中被引用的每个 EIP **必须 MUST **在第一次被引用时都有一个相对的markdown 链接，而**可 MAY**在随后的引用都有一个链接。  该链接 **必须 MUST** 始终用相对路径，这样链接才能在 GitHub 存储库、此存储库的分支、 EIP 主站点、EIP 主站点的镜像中工作， 例如，您可以使用 `./eip-1.md` 链接到此 EIP。
-
 ## 辅助文件
-
 图片、图表和辅助文件应包含在该 EIP 的 `assets` 文件夹的子目录中，如下所示：`assets/eip-N`（将 **N** 替换为 EIP 编号）。 链接到 EIP 中的图片时，使用相对链接，例如 `../assets/eip-1/image.png`。
-
 ## 转让 EIP 所有权
-
 有时需要将 EIP 的所有权转让给新的倡导者。 一般来说，我们希望保留原作者作为转让的 EIP 的共同作者，但这完全取决于原作者。 转让所有权的一个很好的理由是，原作者不再有时间或兴趣来更新它或跟进 EIP 流程，或者已经从网上失联（即无法联系或不回复电子邮件）。 转让所有权的一个坏理由是你不同意 EIP 的发展方向。 我们试图围绕一个 EIP 建立共识，但如果这不可能，你总能提交一个竞争性的 EIP。
-
 如果你有兴趣获得 EIP 的所有权，请向原作者和 EIP 编辑者发送要求接管的消息。 如果原作者没有及时回复邮件，EIP 编辑人会做出单方面的决定（这种决定也不是不能推翻的:））。
-
 ## EIP 编辑们
-
 当前的 EIP 编辑们是
-
 - Alex Beregszaszi (@axic)
 - Gavin John (@Pandapip1)
 - Greg Colvin (@gcolvin)
 - Matt Garnett (@lightclient)
 - Sam Wilson (@SamWilsn)
-
 荣誉退休 EIP 编辑们：
-
 - Casey Detrio (@cdetrio)
 - Hudson Jameson (@Souptacular)
 - Martin Becze (@wanderer)
@@ -303,61 +288,36 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 - Nick Johnson (@arachnid)
 - Nick Savers (@nicksavers)
 - Vitalik Buterin (@vbuterin)
-
 如果你想成为 EIP 编辑，请查看 [EIP-5069](./eip-5069.md)。
-
 ## EIP 编辑职责
-
 对于每个新进入的 EIP，编辑会做如下工作：
-
 - 阅读EIP，检查它是否准备好了：健全且完整。 这些想法必须在技术上有意义，即使它们看来不可能进入 final 状态。
 - 标题应准确地描述内容。
 - 检查 EIP 语言（拼写、语法、句子结构等）、标记（GitHub 风格的 Markdown ）、代码风格
-
 如果 EIP 还没有准备好，编辑会把它发回给作者进行修改，并附有具体指示。
-
 EIP 一旦准备就绪，EIP 编辑将：
-
 - 分配一个 EIP 编号(一般为 PR 编号，但决定权在于编辑)
 - 合并对应的 [拉取请求](https://github.com/ethereum/EIPs/pulls)
 - 向 EIP 作者发回信息，说明下一步工作。
-
 许多 EIP 是由拥有以太坊代码写入权限的开发人员编写和维护的。 EIP 编辑们监控 EIP 的变化，并纠正我们看到的任何结构、语法、拼写或标记错误。
-
 编辑们不对 EIP 进行评判。 我们只是做了行政管理& 编辑的部分。
-
 ## 风格指南
-
 ### 标题
-
 序言中的 `title` 字段:
-
 - 不应包括 “standard” 一词或其任何变体；
 - 且不应包含 EIP 编号。
-
 ### 描述
-
 序言中的 `description` 字段:
-
 - 不应包括 “standard” 一词或其任何变体；
 - 且不应包含 EIP 编号。
-
 ### EIP 编号
-
 当通过编号引用 EIP 时，应以带连字符的形式书写 `EIP-X`，其中 `X` 是 EIP 的分配编号。
-
 ### RFC 2119 和 RFC 8174
-
 我们鼓励 EIP 遵循 [RFC 2119](https://www.ietf.org/rfc/rfc2119.html) 和 [RFC 8174](https://www.ietf.org/rfc/rfc8174.html) 的术语，并在规范部分的开头插入以下内容：
-
 > 本文件中的关键词“必须（MUST）”、“禁止（MUST NOT）”、“必要的（REQUIRED）”、“应当（SHALL）”、“不应（SHALL NOT）”、“应当（SHOULD）”、“不应（SHOULD NOT）”、“推荐的（RECOMMENDED）”、“不推荐（NOT RECOMMENDED）”、“可能（MAY）”和“可选的（OPTIONAL）” 按 RFC 2119 和 RFC 8174 的规定进行解释。
-
 ## 历史
-
 此文档在很大程度上源自 Amir Taaki 编写的[比特币 BIP-0001](https://github.com/bitcoin/bips)，而 BIP-0001 又源于[ Python 的 PEP-0001](https://peps.python.org/)。 很多地方的文字都是简单的复制和修改。 尽管 PEP-0001 文本是由 Barry Warsaw、Jeremy Hylton 和 David Goodger 编写的，但他们不对其在以太坊改进过程中的使用负责，也不应被打扰处理与以太坊或 EIP 有关的技术问题。 请将所有意见直接提交给 EIP 编辑们。
-
 ## 版权
-
 通过 [CC0](../LICENSE.md) 放弃版权和相关权利。
 [^1]:
     ```csl-json
