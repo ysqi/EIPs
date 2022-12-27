@@ -15,7 +15,7 @@ A standard interface for tokens.
 
 ## 摘要
 
-The following standard allows for the implementation of a standard API for tokens within smart contracts. The following standard allows for the implementation of a standard API for tokens within smart contracts. This standard provides basic functionality to transfer tokens, as well as allow tokens to be approved so they can be spent by another on-chain third party.
+The following standard allows for the implementation of a standard API for tokens within smart contracts. The following standard allows for the implementation of a standard API for tokens within smart contracts. This standard provides basic functionality to transfer tokens, as well as allow tokens to be approved so they can be spent by another on-chain third party. The following standard allows for the implementation of a standard API for tokens within smart contracts. This standard provides basic functionality to transfer tokens, as well as allow tokens to be approved so they can be spent by another on-chain third party.
 
 
 ## 动机
@@ -30,7 +30,7 @@ A standard interface allows any tokens on Ethereum to be re-used by other applic
 
 **NOTES**:
  - The following specifications use syntax from Solidity `0.4.17` (or above)
- - Callers MUST handle `false` from `returns (bool success)`.  Callers MUST NOT assume that `false` is never returned!  Callers MUST NOT assume that `false` is never returned!
+ - Callers MUST handle `false` from `returns (bool success)`.  Callers MUST NOT assume that `false` is never returned!  Callers MUST handle `false` from `returns (bool success)`.  Callers MUST NOT assume that `false` is never returned!  Callers MUST NOT assume that `false` is never returned!
 
 
 #### name
@@ -90,7 +90,7 @@ function balanceOf(address _owner) public view returns (uint256 balance)
 
 #### transfer
 
-Transfers `_value` amount of tokens to address `_to`, and MUST fire the `Transfer` event. Transfers `_value` amount of tokens to address `_to`, and MUST fire the `Transfer` event. The function SHOULD `throw` if the message caller's account balance does not have enough tokens to spend.
+Transfers `_value` amount of tokens to address `_to`, and MUST fire the `Transfer` event. Transfers `_value` amount of tokens to address `_to`, and MUST fire the `Transfer` event. The function SHOULD `throw` if the message caller's account balance does not have enough tokens to spend. Transfers `_value` amount of tokens to address `_to`, and MUST fire the `Transfer` event. The function SHOULD `throw` if the message caller's account balance does not have enough tokens to spend.
 
 *Note* Transfers of 0 values MUST be treated as normal transfers and fire the `Transfer` event.
 
@@ -104,7 +104,7 @@ function transfer(address _to, uint256 _value) public returns (bool success)
 
 Transfers `_value` amount of tokens from address `_from` to address `_to`, and MUST fire the `Transfer` event.
 
-The `transferFrom` method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The `transferFrom` method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD `throw` unless the `_from` account has deliberately authorized the sender of the message via some mechanism.
+The `transferFrom` method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The `transferFrom` method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD `throw` unless the `_from` account has deliberately authorized the sender of the message via some mechanism. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The `transferFrom` method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD `throw` unless the `_from` account has deliberately authorized the sender of the message via some mechanism.
 
 *Note* Transfers of 0 values MUST be treated as normal transfers and fire the `Transfer` event.
 
