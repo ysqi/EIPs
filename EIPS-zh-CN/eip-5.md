@@ -10,7 +10,7 @@ created: 2015-11-22
 
 ### Abstract
 
-This EIP makes it possible to call functions that return strings and other dynamically-sized arrays. Currently, when another contract / function is called from inside the Ethereum Virtual Machine, the size of the output has to be specified in advance. It is of course possible to give a larger size, but gas also has to be paid for memory that is not written to, which makes returning dynamically-sized data both costly and inflexible to the extent that it is actually unusable.
+This EIP makes it possible to call functions that return strings and other dynamically-sized arrays. Currently, when another contract / function is called from inside the Ethereum Virtual Machine, the size of the output has to be specified in advance. It is of course possible to give a larger size, but gas also has to be paid for memory that is not written to, which makes returning dynamically-sized data both costly and inflexible to the extent that it is actually unusable. Currently, when another contract / function is called from inside the Ethereum Virtual Machine, the size of the output has to be specified in advance. It is of course possible to give a larger size, but gas also has to be paid for memory that is not written to, which makes returning dynamically-sized data both costly and inflexible to the extent that it is actually unusable.
 
 The solution proposed in this EIP is to charge gas only for memory that is actually written to at the time the `CALL` returns.
 
@@ -28,13 +28,13 @@ After the call, the `MSIZE` opcode should return the size the memory was actuall
 
 ### Motivation
 
-In general, it is good practise to reserve a certain memory area for the output of a call, because letting a subroutine write to arbitrary areas in memory might be dangerous. On the other hand, it is often hard to know the output size of a call prior to performing the call: The data could be in the storage of another contract which is generally inaccessible and determining its size would require another call to that contract.
+In general, it is good practise to reserve a certain memory area for the output of a call, because letting a subroutine write to arbitrary areas in memory might be dangerous. On the other hand, it is often hard to know the output size of a call prior to performing the call: The data could be in the storage of another contract which is generally inaccessible and determining its size would require another call to that contract. On the other hand, it is often hard to know the output size of a call prior to performing the call: The data could be in the storage of another contract which is generally inaccessible and determining its size would require another call to that contract.
 
 Furthermore, charging gas for areas of memory that are not actually written to is unnecessary.
 
-This proposal tries to solve both problems: A caller can choose to provide a gigantic area of memory at the end of their memory area. The callee can "write" to it by returning and the caller is only charged for the memory area that is actually written.
+This proposal tries to solve both problems: A caller can choose to provide a gigantic area of memory at the end of their memory area. The callee can "write" to it by returning and the caller is only charged for the memory area that is actually written. The callee can "write" to it by returning and the caller is only charged for the memory area that is actually written.
 
-This makes it possible to return dynamic data like strings and dynamically-sized arrays in a very flexible way. It is even possible to determine the size of the returned data: If the caller uses `output_start = MSIZE` and `output_size = 2**256-1`, the area of memory that was actually written to is `(output_start, MSIZE)` (here, `MSIZE` as evaluated after the call). This is important because it allows "proxy" contracts which call other contracts whose interface they do not know and just return their output, i.e. they both forward the input and the output. For this, it is important that the caller (1) does not need to know the size of the output in advance and (2) can determine the size of the output after the call.
+This makes it possible to return dynamic data like strings and dynamically-sized arrays in a very flexible way. This makes it possible to return dynamic data like strings and dynamically-sized arrays in a very flexible way. It is even possible to determine the size of the returned data: If the caller uses `output_start = MSIZE` and `output_size = 2**256-1`, the area of memory that was actually written to is `(output_start, MSIZE)` (here, `MSIZE` as evaluated after the call). This is important because it allows "proxy" contracts which call other contracts whose interface they do not know and just return their output, i.e. they both forward the input and the output. For this, it is important that the caller (1) does not need to know the size of the output in advance and (2) can determine the size of the output after the call. This is important because it allows "proxy" contracts which call other contracts whose interface they do not know and just return their output, i.e. they both forward the input and the output. For this, it is important that the caller (1) does not need to know the size of the output in advance and (2) can determine the size of the output after the call.
 
 
 ### Rationale
@@ -53,20 +53,20 @@ On the other hand, it is unlikely that existing contracts will suffer from this 
 
 Gas:
 
-The VM will not charge more gas than before. Usually, contracts are written in a way such that their semantics do not change if they use up less gas. If more gas were used, contracts might go out-of-gas if they perform a tight estimation for gas needed by sub-calls. Here, contracts might only return more gas to their callers.
+The VM will not charge more gas than before. Usually, contracts are written in a way such that their semantics do not change if they use up less gas. If more gas were used, contracts might go out-of-gas if they perform a tight estimation for gas needed by sub-calls. Here, contracts might only return more gas to their callers. Usually, contracts are written in a way such that their semantics do not change if they use up less gas. If more gas were used, contracts might go out-of-gas if they perform a tight estimation for gas needed by sub-calls. Here, contracts might only return more gas to their callers.
 
 Memory size:
 
-The `MSIZE` opcode is typically used to allocate memory at a previously unused spot. The change in semantics affects existing contracts in two ways:
+The `MSIZE` opcode is typically used to allocate memory at a previously unused spot. The change in semantics affects existing contracts in two ways: The change in semantics affects existing contracts in two ways:
 
-1. Overlaps in allocated memory. By using `CALL`, a contract might have wanted to allocate a certain slice of memory, even if that is not written to by the called contract. Subsequent uses of `MSIZE` to allocate memory might overlap with this slice that is now smaller than before the change. It is though unlikely that such contracts exist.
+1. Overlaps in allocated memory. Overlaps in allocated memory. By using `CALL`, a contract might have wanted to allocate a certain slice of memory, even if that is not written to by the called contract. Subsequent uses of `MSIZE` to allocate memory might overlap with this slice that is now smaller than before the change. It is though unlikely that such contracts exist. Subsequent uses of `MSIZE` to allocate memory might overlap with this slice that is now smaller than before the change. It is though unlikely that such contracts exist.
 
-2. Memory addresses change. Rather general, if memory is allocated using `MSIZE`, the addresses of objects in memory will be different after the change. Contract should all be written in a way, though, such that objects in memory are _relocatable_, i.e. their absolute position in memory and their relative position to other objects does not matter. This is of course not the case for arrays, but they are allocated in a single allocation and not with an intermediate `CALL`.
+2. Memory addresses change. Rather general, if memory is allocated using `MSIZE`, the addresses of objects in memory will be different after the change. Memory addresses change. Rather general, if memory is allocated using `MSIZE`, the addresses of objects in memory will be different after the change. Contract should all be written in a way, though, such that objects in memory are _relocatable_, i.e. their absolute position in memory and their relative position to other objects does not matter. This is of course not the case for arrays, but they are allocated in a single allocation and not with an intermediate `CALL`. This is of course not the case for arrays, but they are allocated in a single allocation and not with an intermediate `CALL`.
 
 
 ### Implementation
 
-VM implementers should take care not to grow the memory until the end of the call and after a check that sufficient gas is still available. Typical uses of the EIP include "reserving" `2**256-1` bytes of memory for the output.
+VM implementers should take care not to grow the memory until the end of the call and after a check that sufficient gas is still available. Typical uses of the EIP include "reserving" `2**256-1` bytes of memory for the output. Typical uses of the EIP include "reserving" `2**256-1` bytes of memory for the output.
 
 Python implementation:
 
