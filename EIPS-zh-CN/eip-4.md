@@ -2,12 +2,12 @@
 eip: 4
 title: EIP Classification
 author: Joseph Chow (@ethers)
-status: Final
+status: 终稿
 type: Meta
 created: 2015-11-17
 ---
 
-# Abstract
+# 摘要
 
 This document describes a classification scheme for EIPs, adapted from [BIP 123](https://github.com/bitcoin/bips/blob/master/bip-0123.mediawiki).
 
@@ -15,13 +15,13 @@ EIPs are classified by system layers with lower numbered layers involving more i
 
 The specification defines the layers and sets forth specific criteria for deciding to which layer a particular standards EIP belongs.
 
-# Motivation
+# 动机
 
 Ethereum is a system involving a number of different standards. Some standards are absolute requirements for interoperability while others can be considered optional, giving implementors a choice of whether to support them. Some standards are absolute requirements for interoperability while others can be considered optional, giving implementors a choice of whether to support them.
 
 In order to have a EIP process which more closely reflects the interoperability requirements, it is necessary to categorize EIPs accordingly. Lower layers present considerably greater challenges in getting standards accepted and deployed. Lower layers present considerably greater challenges in getting standards accepted and deployed.
 
-# Specification
+# 规范
 
 Standards EIPs are placed in one of four layers:
 
