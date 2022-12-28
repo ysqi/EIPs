@@ -56,7 +56,7 @@ The difficulty adjustment change conclusively solves a problem that the Ethereum
 
 The use of `(block_timestamp - parent_timestamp) // 10` as the main input variable rather than the time difference directly serves to maintain the coarse-grained nature of the algorithm, preventing an excessive incentive to set the timestamp difference to exactly 1 in order to create a block that has slightly higher difficulty and that will thus be guaranteed to beat out any possible forks. The cap of -99 simply serves to ensure that the difficulty does not fall extremely far if two blocks happen to be very far apart in time due to a client security bug or other black-swan issue.
 
-# 实现
+# Implementation
 
 This is implemented in Python here:
 

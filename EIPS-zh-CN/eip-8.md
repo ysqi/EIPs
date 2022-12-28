@@ -8,13 +8,13 @@ category: Networking
 created: 2015-12-18
 ---
 
-### 摘要
+### Abstract
 
 This EIP introduces new forward-compatibility requirements for implementations of the devp2p Wire Protocol, the RLPx Discovery Protocol and the RLPx TCP Transport Protocol. Clients which implement EIP-8 behave according to Postel's Law:
 
 > Be conservative in what you do, be liberal in what you accept from others.
 
-### 规范
+### Specification
 
 Implementations of **the devp2p Wire Protocol** should ignore the version number of hello packets. When sending the hello packet, the version element should be set to the highest devp2p version supported. Implementations should also ignore any additional list elements at the end of the hello packet.
 
@@ -53,13 +53,13 @@ ecies.encrypt(PUBKEY, MESSAGE, AUTHDATA)
     but written to HMAC-256 before generating the message tag.
 ```
 
-### 动机
+### Motivation
 
 Changes to the devp2p protocols are hard to deploy because clients running an older version will refuse communication if the version number or structure of the hello (discovery ping, RLPx handshake) packet does not match local expectations.
 
 Introducing forward-compatibility requirements as part of the Homestead consensus upgrade will ensure that all client software in use on the Ethereum network can cope with future network protocol upgrades (as long as backwards-compatibility is maintained).
 
-### 基本原理
+### Rationale
 
 The proposed changes address forward compatibility by applying Postel's Law (also known as the Robustness Principle) throughout the protocol stack. The merit and applicability of this approach has been studied repeatedly since its original application in RFC 761. For a recent perspective, see ["The Robustness Principle Reconsidered" (Eric Allman, 2011)](https://queue.acm.org/detail.cfm?id=1999945).
 
@@ -127,7 +127,7 @@ This is largely a question of how much effort the adversary is willing to expens
 
 This EIP is backwards-compatible, all valid version 4 packets are still accepted.
 
-### 实现
+### Implementation
 
 [go-ethereum](https://github.com/ethereum/go-ethereum/pull/2091) [libweb3core](https://github.com/ethereum/libweb3core/pull/46) [pydevp2p](https://github.com/ethereum/pydevp2p/pull/32)
 
@@ -325,6 +325,6 @@ Running B's `ingress-mac` keccak state on the string "foo" yields the hash
 ingress-mac("foo") = 0c7ec6340062cc46f5e9f1e3cf86f8c8c403c5a0964f5df0ebd34a75ddc86db5
 ```
 
-### 版权声明
+### Copyright
 
 Copyright and related rights waived via [CC0](../LICENSE.md).
