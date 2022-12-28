@@ -2,9 +2,9 @@
 eip: 7
 title: DELEGATECALL
 author: Vitalik Buterin (@vbuterin)
-status: 终稿
-type: 标准跟踪
-category: 核心
+status: Final
+type: Standards Track
+category: Core
 created: 2015-11-15
 ---
 
@@ -21,7 +21,7 @@ created: 2015-11-15
 
 Add a new opcode, `DELEGATECALL` at `0xf4`, which is similar in idea to `CALLCODE`, except that it propagates the sender and value from the parent scope to the child scope, i.e. the call created has the same sender and value as the original call.
 
-### 规范
+### Specification
 
 `DELEGATECALL`: `0xf4`, takes 6 operands:
 - `gas`: the amount of gas the code may use in order to execute;
@@ -42,7 +42,7 @@ Add a new opcode, `DELEGATECALL` at `0xf4`, which is similar in idea to `CALLCOD
 #### Other notes
 - The depth limit of 1024 is still preserved as normal.
 
-### 基本原理
+### Rationale
 
 Propagating the sender and value from the parent scope to the child scope makes it much easier for a contract to store another address as a mutable source of code and ''pass through'' calls to it, as the child code would execute in essentially the same environment (except for reduced gas and increased callstack depth) as the parent.
 
@@ -72,4 +72,4 @@ The child functions called by these methods can now freely reference `msg.sender
 
 ### Possible arguments against
 
-* You can replicate this functionality by just sticking the sender into the first twenty bytes of the call data. However, this would mean that code would need to be specially compiled for delegated contracts, and would not be usable in delegated and raw contexts at the same time. However, this would mean that code would need to be specially compiled for delegated contracts, and would not be usable in delegated and raw contexts at the same time.
+* You can replicate this functionality by just sticking the sender into the first twenty bytes of the call data. However, this would mean that code would need to be specially compiled for delegated contracts, and would not be usable in delegated and raw contexts at the same time.
