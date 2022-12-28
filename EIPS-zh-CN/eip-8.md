@@ -123,7 +123,7 @@ This is largely a question of how much effort the adversary is willing to expens
 * For typical firewall operators, blocking all connections whose first two bytes form an integer in range [300,600] is probably too invasive. Port-based blocking would be a more effective measure to filter most RLPx traffic.
 * For an attacker who can afford to correlate many criteria, the size prefix would ease recognition because it adds to the indicator set. However, such an attacker could also be expected to read or participate in RLPx Discovery traffic, which would be sufficient to enable blocking of RLPx TCP connections whatever their format is.
 
-### Backwards Compatibility
+### 向后兼容性
 
 This EIP is backwards-compatible, all valid version 4 packets are still accepted.
 

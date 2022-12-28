@@ -45,7 +45,7 @@ At an earlier stage, it was proposed to also add the size of the returned data o
 
 Some comments are available at https://github.com/ethereum/EIPs/issues/8
 
-### Backwards Compatibility
+### 向后兼容性
 
 This proposal changes the semantics of contracts because contracts can access the gas counter and the size of memory.
 

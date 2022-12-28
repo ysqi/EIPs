@@ -8,7 +8,7 @@ status: Final
 created: 2015-11-19
 ---
 
-## Simple Summary
+## 简述
 
 A standard interface for tokens.
 
