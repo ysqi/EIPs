@@ -8,22 +8,22 @@ status: Final
 created: 2015-11-19
 ---
 
-## Simple Summary
+## 简述
 
 A standard interface for tokens.
 
 
-## Abstract
+## 摘要
 
 The following standard allows for the implementation of a standard API for tokens within smart contracts. This standard provides basic functionality to transfer tokens, as well as allow tokens to be approved so they can be spent by another on-chain third party.
 
 
-## Motivation
+## 动机
 
 A standard interface allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges.
 
 
-## Specification
+## 规范
 
 ## Token
 ### Methods
@@ -160,7 +160,7 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 
 
 
-## Implementation
+## 实现
 
 There are already plenty of ERC20-compliant tokens deployed on the Ethereum network. Different implementations have been written by various teams that have different trade-offs: from gas saving to improved security.
 
@@ -179,5 +179,5 @@ Historical links related to this standard:
 
 
 
-## Copyright
+## 版权声明
 Copyright and related rights waived via [CC0](../LICENSE.md).

@@ -67,7 +67,7 @@ Benefits:
 - Keeps the length at 40 characters
 - On average there will be 15 check bits per address, and the net probability that a randomly generated address if mistyped will accidentally pass a check is 0.0247%. This is a ~50x improvement over ICAP, but not as good as a 4-byte check code.
 
-# Implementation
+# 实现
 
 In javascript:
 
