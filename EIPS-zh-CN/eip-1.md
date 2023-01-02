@@ -69,13 +69,13 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 ### EIP 流程
 
-以下是所有轨道中所有 EIP 的标准化流程。
+以下是所有跟踪中所有 EIP 的标准化流程。
 
 ![EIP 状态图](../assets/eip-1/EIP-process-update.jpg)
 
 **想法-Idea** - 一个预先起草的想法， 不在 EIP 资源库中跟踪。
 
-**草稿-Draft** - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑会将 EIP 合并到 EIP 仓库中。
+**草案-Draft** - EIP 进展中的第一个正式跟踪阶段。 当格式正确时，EIP 编辑会将 EIP 合并到 EIP 仓库中。
 
 **评审-Review** - EIP 作者将 EIP 标记为准备好并请求同行评审。
 
@@ -90,7 +90,7 @@ AllCoreDevs 电话是客户端实施者做三件事的一种方式。 第一，�
 
 **撤回-Withdrawn** - EIP 作者已撤回提案的 EIP。 这种状态具有终结性，不能再使用这个 EIP 编号复活。 如果这个想法在以后的日子里被推行，它将被视为一个新的提案。
 
-**活着-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到终版状态的 EIP。 这包括最引入注目的 EIP-1。
+**活的-Living** - EIP 的特殊状态，适用于那些旨在持续更新而未达到终版状态的 EIP。 这包括最引人注目的 EIP-1。
 
 ## 一个成功的 EIP 应该包括什么?
 
@@ -127,7 +127,7 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 `status`: *状态：Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
-`last-call-deadline`: *终审截止日期* (可选字段，只在状态为 `Last Call`时需要)。
+`last-call-deadline`: *终审截止日期* (可选字段，只有状态为 `Last Call`时需要)。
 
 `type`: *`Standards Track`, `Meta`或 `Informational`中的一个*。
 
@@ -147,17 +147,17 @@ EIP 应以 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Chea
 
 The `author` 头列出 EIP 的作者/所有者的姓名、电子邮件地址或用户名。 喜欢匿名的人可以只使用用户名，或使用名字和用户名。 `author` 头内容格式必须是：
 
+如果包括电子邮件地址或 GitHub 用户名：
+
 > Random J. User &lt;address@dom.ain&gt;
 
 或
 
 > Random J. User (@username)
 
-如果包括电子邮件地址或 GitHub 用户名，以及
+如果没有给出电子邮件地址：
 
 > Random J. User
-
-如果没有给出电子邮件地址。
 
 不可能同时使用电子邮件和 GitHub 用户名。 如果必须同时使用，可以把名字写两次，一次是GitHub用户名，另一次是电子邮件。
 
@@ -165,7 +165,7 @@ The `author` 头列出 EIP 的作者/所有者的姓名、电子邮件地址或�
 
 ### `discussions-to` 头
 
-虽然 EIP 是草稿，但 `discussions-to` 头将指明讨论 EIP 的网址。
+虽然 EIP 是草案，但 `discussions-to` 头将指明讨论 EIP 的网址。
 
 首选讨论网站是 [Ethereum Magicans](https://ethereum-magicians.org/) 的主题贴。 该网址不能指向 Github PR，任何短暂的网址，以及任何可能随着时间推移而被锁定的网址（如 Reddit 主题贴）。
 
@@ -179,11 +179,11 @@ The `author` 头列出 EIP 的作者/所有者的姓名、电子邮件地址或�
 
 ### `created` 头
 
-`created`头记录了 EIP 被分配一个编号的日期。 这两个头都应采用 yyyy-mm-dd 格式，例如 2001-08-14。
+`created`头记录了 EIP 被分配编号的日期。 这两个头都应采用 yyyy-mm-dd 格式，例如 2001-08-14。
 
 ### `requires` 头
 
-EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 如果存在这种依赖关系，此字段是必需的。
+EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 如果存在这种依赖关系，此字段是必要的。
 
 当当前 EIP 在没有另一个 EIP 的概念或技术要素的情况下不能被理解或实施时，就会产生`requires`依赖关系。 仅提及另一个 EIP 并不一定会产生这种依赖关系。
 
@@ -205,7 +205,7 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 
 [Beacon Chain](https://github.com/ethereum/consensus-specs/blob/26695a9fdb747ecbe4f0bb9812fedbc402e5e18c/specs/sharding/beacon-chain.md)
 
-允许的共识层规范的网址必须锚定到一个特定的提交，因此必须匹配这个正则表达式。
+允许的共识层规范的网址必须锚定到一个特定的 commit，因此必须匹配这个正则表达式。
 
 ```regex
 ^https://github.com/ethereum/consensus-specs/blob/[0-9a-f]{40}/.*$
@@ -223,7 +223,7 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 
 [以太坊连接协议](https://github.com/ethereum/devp2p/blob/40ab248bf7e017e83cc9812a4e048446709623e8/caps/eth.md)
 
-允许的网络规范的网址必须锚定到一个特定的提交，因此必须匹配这个正则表达式。
+允许的网络规范的网址必须锚定到一个特定的 commit，因此必须匹配这个正则表达式。
 
 ```regex
 ^https://github.com/ethereum/devp2p/blob/[0-9a-f]{40}/.*$
@@ -272,7 +272,7 @@ EIP 可能有一个 `requires` 头，表示该 EIP 所依赖的 EIP 编号。 �
 
 ## 关联到其他 EIP
 
-对其他 EIP 的引用应遵循 `EIP-N` 格式，其中 `N` 是您所引用的 EIP 编号。  在 EIP 中被引用的每个 EIP **必须 MUST **在第一次被引用时都有一个相对的markdown 链接，而**可 MAY**在随后的引用都有一个链接。  该链接 **必须 MUST** 始终用相对路径，这样链接才能在 GitHub 存储库、此存储库的分支、 EIP 主站点、EIP 主站点的镜像中工作， 例如，您可以使用 `./eip-1.md` 链接到此 EIP。
+对其他 EIP 的引用应遵循 `EIP-N` 格式，其中 `N` 是您所引用的 EIP 编号。  在 EIP 中被引用的每个 EIP **必须**在第一次被引用时都有一个相对的markdown 链接，而**可**在随后的引用都有一个链接。  该链接**必须**始终用相对路径，这样链接才能在 GitHub 存储库、此存储库的分支、 EIP 主站点、EIP 主站点的镜像中工作， 例如，您可以使用 `./eip-1.md` 链接到此 EIP。
 
 ## 辅助文件
 
@@ -359,6 +359,7 @@ EIP 一旦准备就绪，EIP 编辑将：
 ## 版权
 
 通过 [CC0](../LICENSE.md) 放弃版权和相关权利。
+
 [^1]:
     ```csl-json
     {
